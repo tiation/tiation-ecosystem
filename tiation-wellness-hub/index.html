@@ -24,10 +24,40 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  </head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./src/index.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <nav class="bg-white dark:bg-gray-800 shadow-lg sticky top-0 z-50 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center space-x-3">
+                        <svg class="h-8 w-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        <span class="font-bold text-xl text-gray-900">Wellness Hub</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-cyan-400 transition">About</a>
+                    <a href="#features" class="text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-cyan-400 transition">Features</a>
+                    <a href="#contact" class="text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-cyan-400 transition">Contact</a>
+                    <button id="theme-toggle" class="text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-cyan-400 transition p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
+                        <i id="theme-icon" class="fas fa-moon text-xl"></i>
+                    </button>
+                    <a href="https://github.com/tiation/tiation-wellness-hub" class="text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-cyan-400 transition">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav
 
   <body>
     <div id="root"></div>
+    <script src="../config/tiation-theme-toggle.js"></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
