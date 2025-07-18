@@ -1,0 +1,25 @@
+{
+  "name": "Tiation Dark Neon",
+  "background": "#0a0a0a",
+  "foreground": "#ffffff",
+  "cursor": "#00ffff",
+  "selection": "#00ffff40",
+  "colors": {
+    "black": "#0a0a0a",
+    "red": "#ff6b6b",
+    "green": "#00ff41",
+    "yellow": "#ffd93d",
+    "blue": "#0080ff",
+    "magenta": "#ff00ff",
+    "cyan": "#00ffff",
+    "white": "#ffffff",
+    "brightBlack": "#1a1a1a",
+    "brightRed": "#ff8e8e",
+    "brightGreen": "#6bff6b",
+    "brightYellow": "#ffeb3b",
+    "brightBlue": "#42a5f5",
+    "brightMagenta": "#ff42ff",
+    "brightCyan": "#42ffff",
+    "brightWhite": "#ffffff"
+  }
+}

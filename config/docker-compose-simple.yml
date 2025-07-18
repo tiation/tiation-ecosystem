@@ -1,0 +1,53 @@
+version: "3.8"
+
+services:
+  netmaker:
+    container_name: netmaker
+    image: gravitl/netmaker:v1.0.0
+    restart: always
+    volumes:
+      - netmaker_data:/root/data
+    environment:
+      - DATABASE=sqlite
+      - MASTER_KEY=secretkey
+      - MQ_USERNAME=netmaker
+      - MQ_PASSWORD=password
+      - SERVER_BROKER_ENDPOINT=ws://mq:1883
+      - SERVER_HOST=localhost
+      - API_PORT=8081
+      - CORS_ALLOWED_ORIGIN=*
+      - DISPLAY_KEYS=on
+      - VERBOSITY=1
+      - TELEMETRY=off
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mq
+
+  netmaker-ui:
+    container_name: netmaker-ui
+    image: gravitl/netmaker-ui:v1.0.0
+    restart: always
+    environment:
+      - BACKEND_URL=http://localhost:8081
+    ports:
+      - "8085:80"
+    depends_on:
+      - netmaker
+
+  mq:
+    container_name: mq
+    image: eclipse-mosquitto:2.0.15-openssl
+    restart: always
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - mosquitto_data:/mosquitto/data
+      - mosquitto_logs:/mosquitto/log
+    ports:
+      - "1883:1883"
+      - "8083:8080"
+
+volumes:
+  netmaker_data:
+  mosquitto_data:
+  mosquitto_logs:

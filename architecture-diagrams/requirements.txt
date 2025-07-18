@@ -1,0 +1,27 @@
+# Enterprise Architecture Diagrams - Python Dependencies
+# Core diagram generation
+diagrams==0.23.4
+graphviz==0.20.3
+Pillow==10.4.0
+
+# Additional visualization tools
+matplotlib==3.7.2
+seaborn==0.12.2
+plotly==5.15.0
+
+# Documentation generation
+mkdocs==1.5.3
+mkdocs-material==9.1.21
+mkdocs-mermaid2-plugin==1.1.1
+
+# Development tools
+black==23.7.0
+flake8==6.0.0
+pytest==7.4.0
+pytest-cov==4.1.0
+
+# Utilities
+click==8.1.7
+colorama==0.4.6
+rich==13.5.2
+typer==0.9.0

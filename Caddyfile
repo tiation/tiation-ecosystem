@@ -1,0 +1,35 @@
+# Caddyfile for Netmaker
+{
+    auto_https off
+    servers {
+        protocols h1 h2c
+    }
+}
+
+# Dashboard
+dashboard.localhost:80 {
+    # Apply basic security headers
+    header {
+        # Enable HSTS
+        Strict-Transport-Security max-age=31536000;
+        # Disable clients from sniffing the media type
+        X-Content-Type-Options nosniff
+        # Prevent some browsers from MIME-sniffing
+        X-Frame-Options DENY
+        # Clickjacking protection
+        X-Frame-Options DENY
+        # Keep referrer data off of HTTP connections
+        Referrer-Policy no-referrer-when-downgrade
+    }
+    reverse_proxy netmaker-ui:80
+}
+
+# API
+api.localhost:80 {
+    reverse_proxy netmaker:8081
+}
+
+# MQ
+broker.localhost:80 {
+    reverse_proxy mq:8080
+}
