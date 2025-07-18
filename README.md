@@ -150,7 +150,7 @@ This project is licensed under the MIT License - see individual repositories for
 ## 📞 Support
 
 For enterprise support and consulting:
-- Email: support@tiation.com
+- Email: tiatheone@protonmail.com
 - Documentation: [Enterprise Support Portal](https://support.tiation.com)
 - Issues: [GitHub Issues](https://github.com/tiation/tiation-github/issues)
 
