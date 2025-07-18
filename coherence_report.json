@@ -564,6 +564,7 @@
       "tiation-terminal-workflows"
     ],
     "tiation-rigger-infrastructure": [
+      "TiaAstor",
       "tiation-chase-white-rabbit-ngo",
       "tiation-rigger-infrastructure",
       "tiation-ai-agents",
@@ -658,7 +659,8 @@
   },
   "narrative_coherence": {
     "TiaAstor": [
-      "technology"
+      "technology",
+      "personal"
     ],
     "tiation-chase-white-rabbit-ngo": [
       "change",
