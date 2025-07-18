@@ -1,19 +1,20 @@
 # Universal Documentation Push Report
 
-**Generated:** Sat 19 Jul 2025 06:36:21 AWST
+**Generated:** Sat 19 Jul 2025 06:52:41 AWST
 
 ## Summary
 
-- **Total Repositories:** 87
-- **Successfully Pushed:** 82
-- **No Changes Needed:** 0
-- **Failed:** 5
+- **Total Repositories:** 89
+- **Successfully Pushed:** 8
+- **No Changes Needed:** 77
+- **Failed:** 4
 
 ## ✅ Successfully Pushed Repositories
 
 - AutomationServer
 - DiceRollerSimulator
 - Infrastructure
+- Law
 - MetricsDashboard
 - MinutesRecorder
 - Parrot-Security-Guide
@@ -24,6 +25,7 @@
 - dice-roller-marketing-site
 - dnd_dice_roller
 - dnddiceroller-android
+- dockerdeb
 - dontbeacunt
 - dotfiles
 - git-workspace
@@ -85,6 +87,7 @@
 - tiation-rigger-workspace-docs
 - tiation-secure-vpn
 - tiation-server-configs-gae
+- tiation-template-repo
 - tiation-terminal-workflows
 - tiation-vpn-mesh-network
 - tiation-wellness-hub
@@ -97,32 +100,9 @@
 ## ❌ Failed Repositories
 
 - **BRANDING_TEMPLATES:** Not a git repository
-- **Law:** Failed to push changes: To github.com:tiation/Law.git
- ! [rejected]        main -> main (fetch first)
-error: failed to push some refs to 'github.com:tiation/Law.git'
-hint: Updates were rejected because the remote contains work that you do not
-hint: have locally. This is usually caused by another repository pushing to
-hint: the same ref. If you want to integrate the remote changes, use
-hint: 'git pull' before pushing again.
-hint: See the 'Note about fast-forwards' in 'git push --help' for details.
-
-- **dockerdeb:** Failed to push changes: To github.com:tiation/dockerdeb.git
- ! [rejected]        master -> master (fetch first)
-error: failed to push some refs to 'github.com:tiation/dockerdeb.git'
-hint: Updates were rejected because the remote contains work that you do not
-hint: have locally. This is usually caused by another repository pushing to
-hint: the same ref. If you want to integrate the remote changes, use
-hint: 'git pull' before pushing again.
-hint: See the 'Note about fast-forwards' in 'git push --help' for details.
-
 - **monetization-templates:** Not a git repository
-- **tiation-rigger-workspace:** Failed to push changes: fatal: You are not currently on a branch.
-To push the history leading to the current (detached HEAD)
-state now, use
-
-    git push origin HEAD:<name-of-remote-branch>
-
-
+- **tiation-rigger-platform:** Not a git repository
+- **tiation-rigger-workspace:** Failed to commit changes: 
 
 ## 🎯 Next Steps
 

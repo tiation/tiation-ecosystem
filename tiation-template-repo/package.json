@@ -1,13 +1,13 @@
 {
-  "name": "{{PROJECT_NAME}}",
+  "name": "kebab-case",
   "private": false,
   "version": "1.0.0",
   "type": "module",
-  "description": "{{PROJECT_DESCRIPTION}} - A tiation project",
-  "homepage": "{{HOMEPAGE_URL}}",
+  "description": "test - A tiation project",
+  "homepage": "https://tiation.github.io/test",
   "repository": {
     "type": "git",
-    "url": "{{REPOSITORY_URL}}"
+    "url": "https://github.com/tiation/test.git"
   },
   "author": "tiatheone@protonmail.com",
   "license": "MIT",

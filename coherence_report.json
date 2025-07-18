@@ -1,9 +1,9 @@
 {
   "timestamp": "2025-07-18T16:39:29Z",
-  "total_repositories": 91,
-  "branding_score": 100.0,
-  "branding_passed": 91,
-  "branding_failed": 0,
+  "total_repositories": 94,
+  "branding_score": 90.42553191489363,
+  "branding_passed": 85,
+  "branding_failed": 9,
   "pinned_repos_status": {
     "TiaAstor": true,
     "tiation-chase-white-rabbit-ngo": true,
@@ -35,6 +35,7 @@
       "tiation-cms",
       "tiation-terminal-workflows"
     ],
+    "dnddiceroller-enhanced": [],
     "tiation-ai-agents": [
       "tiation-chase-white-rabbit-ngo",
       "tiation-rigger-infrastructure",
@@ -249,11 +250,7 @@
       "tiation-terminal-workflows"
     ],
     "tiation-rigger-workspace": [
-      "tiation-chase-white-rabbit-ngo",
-      "tiation-rigger-infrastructure",
-      "tiation-ai-agents",
-      "tiation-cms",
-      "tiation-terminal-workflows"
+      "TiaAstor"
     ],
     "RiggerConnectMobileApp": [
       "TiaAstor",
@@ -270,13 +267,7 @@
       "tiation-cms",
       "tiation-terminal-workflows"
     ],
-    "Law": [
-      "tiation-chase-white-rabbit-ngo",
-      "tiation-rigger-infrastructure",
-      "tiation-ai-agents",
-      "tiation-cms",
-      "tiation-terminal-workflows"
-    ],
+    "Law": [],
     "tiation-rigger-automation-server": [
       "tiation-chase-white-rabbit-ngo",
       "tiation-rigger-infrastructure",
@@ -342,6 +333,8 @@
       "tiation-cms",
       "tiation-terminal-workflows"
     ],
+    "tiation-template-repo": [],
+    "my-new-project": [],
     "tiation-active-directory-setup": [
       "tiation-chase-white-rabbit-ngo",
       "tiation-rigger-infrastructure",
@@ -506,6 +499,7 @@
       "tiation-terminal-workflows"
     ],
     "dockerdeb": [
+      "TiaAstor",
       "tiation-chase-white-rabbit-ngo",
       "tiation-rigger-infrastructure",
       "tiation-ai-agents",
@@ -684,7 +678,8 @@
       "cms",
       "content",
       "management",
-      "enterprise"
+      "enterprise",
+      "multi"
     ],
     "tiation-terminal-workflows": [
       "terminal",
@@ -712,6 +707,11 @@
       "license",
       "contributing",
       "documentation"
+    ],
+    "dnddiceroller-enhanced": [
+      "badges",
+      "license",
+      "contributing"
     ],
     "tiation-ai-agents": [
       "badges",
@@ -969,6 +969,16 @@
       "license",
       "contributing",
       "documentation"
+    ],
+    "tiation-template-repo": [
+      "badges",
+      "license",
+      "contributing"
+    ],
+    "my-new-project": [
+      "badges",
+      "license",
+      "contributing"
     ],
     "tiation-active-directory-setup": [
       "badges",
@@ -1238,6 +1248,7 @@
     "tiation-github": true,
     "tiation-github-pages-theme": false,
     "dontbeacunt": false,
+    "dnddiceroller-enhanced": false,
     "tiation-ai-agents": false,
     "tiation-rigger-connect-api": false,
     "tiation-automation-workspace": true,
@@ -1281,6 +1292,8 @@
     "tiation-invoice-generator": false,
     "home-safety-matrix-ai": false,
     "tiation-knowledge-hub": false,
+    "tiation-template-repo": false,
+    "my-new-project": false,
     "tiation-active-directory-setup": false,
     "tiation.github.io": false,
     "tiation-rigger-metrics-dashboard": false,
@@ -1304,7 +1317,7 @@
     "tough-talk-podcast-chaos": false,
     "tiation-ai-code-assistant": false,
     "tiation-ansible-enterprise": false,
-    "dockerdeb": false,
+    "dockerdeb": true,
     "tiation-secure-vpn": false,
     "shattered-realms-nexus": true,
     "git@github.com!tiation!shattered-realms-nexus.git": false,
@@ -1326,5 +1339,25 @@
     "Parrot-Security-Guide": false,
     "liberation-system": false
   },
-  "issues": []
+  "issues": [
+    "dnddiceroller-enhanced: Missing ecosystem_banner",
+    "dnddiceroller-enhanced: Missing ecosystem_footer",
+    "dnddiceroller-enhanced: Missing dark_theme_colors",
+    "tiation-ai-agents: Missing dark_theme_colors",
+    "tiation-cms: Missing dark_theme_colors",
+    "tiation-terminal-workflows: Missing dark_theme_colors",
+    "tiation-rigger-workspace: Missing ecosystem_banner",
+    "tiation-rigger-workspace: Missing ecosystem_footer",
+    "tiation-rigger-workspace: Missing dark_theme_colors",
+    "Law: Missing ecosystem_banner",
+    "Law: Missing ecosystem_footer",
+    "Law: Missing dark_theme_colors",
+    "tiation-docker-debian: Missing dark_theme_colors",
+    "tiation-template-repo: Missing ecosystem_banner",
+    "tiation-template-repo: Missing ecosystem_footer",
+    "tiation-template-repo: Missing dark_theme_colors",
+    "my-new-project: Missing ecosystem_banner",
+    "my-new-project: Missing ecosystem_footer",
+    "my-new-project: Missing dark_theme_colors"
+  ]
 }

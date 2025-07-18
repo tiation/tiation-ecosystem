@@ -1,9 +1,9 @@
-# {{PROJECT_NAME}}
+# kebab-case
 
-> {{PROJECT_DESCRIPTION}} - A tiation project
+> test - A tiation project
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-{{SURGE_URL}}-brightgreen)]({{SURGE_URL}})
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-{{HOMEPAGE_URL}}-blue)]({{HOMEPAGE_URL}})
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-https://tiation-test.surge.sh-brightgreen)](https://tiation-test.surge.sh)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-https://tiation.github.io/test-blue)](https://tiation.github.io/test)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
 ## 🚀 Features
@@ -19,8 +19,8 @@
 
 ## 🎯 Live Demo
 
-- **Primary (Surge)**: [{{SURGE_URL}}]({{SURGE_URL}})
-- **GitHub Pages**: [{{HOMEPAGE_URL}}]({{HOMEPAGE_URL}})
+- **Primary (Surge)**: [https://tiation-test.surge.sh](https://tiation-test.surge.sh)
+- **GitHub Pages**: [https://tiation.github.io/test](https://tiation.github.io/test)
 
 ## 🛠️ Quick Start
 
@@ -33,8 +33,8 @@
 
 1. **Clone the repository**
    ```bash
-   git clone {{REPOSITORY_URL}}
-   cd {{PROJECT_NAME}}
+   git clone https://github.com/tiation/test.git
+   cd kebab-case
    ```
 
 2. **Install dependencies**
@@ -103,7 +103,7 @@ npm run deploy:vercel
 ## 📁 Project Structure
 
 ```
-{{PROJECT_NAME}}/
+kebab-case/
 ├── public/              # Static assets
 ├── src/
 │   ├── components/      # React components
@@ -132,7 +132,7 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page]({{REPOSITORY_URL}}/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/tiation/test.git/issues).
 
 ## 💫 About Tiation
 

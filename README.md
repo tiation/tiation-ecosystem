@@ -32,6 +32,27 @@
   <img src="architecture-diagrams/output/tiation-ecosystem-overview.svg" alt="Tiation Ecosystem Overview" width="90%">
 </div>
 
+## 🤖 FOR AI AGENTS - CRITICAL INFORMATION
+
+**⚠️ ALL AGENTS MUST READ THIS FIRST:**
+
+📖 **[TIATION_AGENT_DEPLOYMENT_GUIDE.md](./TIATION_AGENT_DEPLOYMENT_GUIDE.md)** - Complete deployment automation guide
+
+🔧 **Quick Reference:**
+- **12 repositories** fully configured with enterprise deployment
+- **Automated CI/CD workflows** across all projects
+- **Dark neon theme** consistency enforced
+- **Security headers & performance** optimization applied
+
+```bash
+# Essential commands for agents:
+npm run deploy:surge          # Deploy to production
+npm run health-check          # Verify deployment
+./scripts/deploy-all-repos.sh # Configure all repositories
+```
+
+---
+
 ## 🚀 Overview
 
 **Tiation GitHub Repository Collection** serves as the central orchestration hub for the Tiation enterprise ecosystem, managing 80+ interconnected repositories with enterprise-grade infrastructure, AI-powered automation, and comprehensive documentation. This collection represents a complete enterprise software ecosystem with dark neon theming, automated workflows, and professional deployment standards.

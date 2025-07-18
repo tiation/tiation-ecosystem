@@ -1,0 +1,23 @@
+{
+    "hostname": "airly.local",
+    "interfaces": {
+        "lo0": {
+            "ip": "127.0.0.1",
+            "netmask": "255.0.0.0"
+        },
+        "en0": {
+            "ip": "172.20.10.11",
+            "netmask": "255.255.255.240"
+        },
+        "utun6": {
+            "ip": "100.123.107.113",
+            "netmask": "255.255.255.255"
+        }
+    },
+    "mac_address": "5e:71:c7:39:01:39",
+    "system_info": {
+        "cpu_count": 8,
+        "memory_total": 8589934592,
+        "platform": "Darwin"
+    }
+}

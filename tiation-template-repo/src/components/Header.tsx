@@ -11,10 +11,10 @@ import {
 const Header = () => {
   const showcaseSites = [
     {
-      name: "{{PROJECT_NAME}}",
-      url: "{{SURGE_URL}}",
+      name: "kebab-case",
+      url: "https://tiation-test.surge.sh",
       current: true,
-      description: "{{PROJECT_DESCRIPTION}}"
+      description: "test"
     },
     {
       name: "Developer Portfolio",
@@ -89,10 +89,10 @@ const Header = () => {
                 <span className="bg-gradient-to-r from-cyan-400 to-magenta-400 bg-clip-text text-transparent">
                   TIATION
                 </span>{' '}
-                {{PROJECT_NAME}}
+                kebab-case
               </h1>
               <p className="text-xs text-gray-400 font-mono uppercase tracking-wider">
-                {{PROJECT_DESCRIPTION}}
+                test
               </p>
             </div>
           </div>
