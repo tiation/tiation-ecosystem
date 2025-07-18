@@ -1,17 +1,17 @@
-# Tiation MetricsDashboard
+# Tiation temp github pages
 
 <div align="center">
   <img src="assets/tiation-logo.svg" alt="Tiation Logo" width="200" height="200">
   
   [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-  [![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-green.svg)](https://tiation.github.io/MetricsDashboard)
+  [![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-green.svg)](https://tiation.github.io/temp-github-pages)
   [![Enterprise Grade](https://img.shields.io/badge/Enterprise-Grade-gold.svg)](https://github.com/tiation)
   [![Tiation](https://img.shields.io/badge/Powered%20by-Tiation-cyan.svg)](https://github.com/tiation)
 </div>
 
 ## 🚀 Overview
 
-Enterprise-grade MetricsDashboard solution designed for professional organizations and developers. This comprehensive platform provides cutting-edge tools and services with enterprise-level security, scalability, and support.
+Enterprise-grade temp github pages solution designed for professional organizations and developers. This comprehensive platform provides cutting-edge tools and services with enterprise-level security, scalability, and support.
 
 ## 📋 Table of Contents
 
@@ -45,8 +45,8 @@ Enterprise-grade MetricsDashboard solution designed for professional organizatio
 
 ```bash
 # Clone the repository
-git clone https://github.com/tiation/MetricsDashboard.git
-cd MetricsDashboard
+git clone https://github.com/tiation/temp-github-pages.git
+cd temp-github-pages
 
 # Install dependencies (if applicable)
 npm install
@@ -68,8 +68,8 @@ npm start
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/tiation/MetricsDashboard.git
-   cd MetricsDashboard
+   git clone https://github.com/tiation/temp-github-pages.git
+   cd temp-github-pages
    ```
 
 2. **Install dependencies**
@@ -87,7 +87,7 @@ npm start
 
 ### Basic Usage
 
-The MetricsDashboard provides a comprehensive set of tools and features for enterprise environments. See the documentation for detailed usage instructions.
+The temp github pages provides a comprehensive set of tools and features for enterprise environments. See the documentation for detailed usage instructions.
 
 ### Advanced Configuration
 
@@ -103,7 +103,7 @@ For enterprise deployments, refer to our [Enterprise Deployment Guide](docs/depl
 
 ### Live Documentation
 
-Visit our [GitHub Pages site](https://tiation.github.io/MetricsDashboard) for interactive documentation.
+Visit our [GitHub Pages site](https://tiation.github.io/temp-github-pages) for interactive documentation.
 
 ## ❓ FAQ
 
@@ -149,9 +149,9 @@ Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing.
 
 ### Community Support
 
-- **GitHub Issues**: [Report bugs or request features](https://github.com/tiation/MetricsDashboard/issues)
-- **Discussions**: [Join community discussions](https://github.com/tiation/MetricsDashboard/discussions)
-- **Documentation**: [Browse our documentation](https://tiation.github.io/MetricsDashboard)
+- **GitHub Issues**: [Report bugs or request features](https://github.com/tiation/temp-github-pages/issues)
+- **Discussions**: [Join community discussions](https://github.com/tiation/temp-github-pages/discussions)
+- **Documentation**: [Browse our documentation](https://tiation.github.io/temp-github-pages)
 
 ### Enterprise Support
 
@@ -173,7 +173,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### Our Solutions
 
-- **MetricsDashboard**: Professional-grade solution for enterprise environments
+- **temp github pages**: Professional-grade solution for enterprise environments
 - **Automation Platform**: Comprehensive business process automation
 - **Developer Tools**: Professional development and deployment tools
 - **Enterprise Integration**: Seamless system integration solutions
