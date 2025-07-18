@@ -47,7 +47,7 @@ const Header = () => {
             </div>
             <div>
               <h1 className="text-2xl font-playfair font-bold bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">Tiation</h1>
-              <p className="text-xs text-muted-foreground">Wellness Hub</p>
+              <p className="text-xs text-muted-foreground">React Template</p>
             </div>
           </div>
 

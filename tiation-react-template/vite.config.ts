@@ -19,7 +19,7 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: '/tiation-wellness-hub/',
+  base: '/tiation-react-template/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',

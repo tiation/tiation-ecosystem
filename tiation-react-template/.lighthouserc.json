@@ -1,7 +1,7 @@
 {
   "ci": {
     "collect": {
-      "url": ["https://tiation.github.io/tiation-wellness-hub/"],
+      "url": ["https://tiation.github.io/tiation-react-template/"],
       "numberOfRuns": 3,
       "settings": {
         "preset": "desktop",

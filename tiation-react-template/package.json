@@ -1,29 +1,30 @@
 {
-  "name": "tiation-wellness-hub",
+  "name": "tiation-react-template",
   "private": false,
   "version": "1.0.0",
   "type": "module",
-  "description": "Enterprise-grade wellness and mindfulness platform with dark neon theme",
+  "description": "Enterprise-grade React template with modern tooling, dark neon theme, and automated CI/CD",
   "author": "Tiation Team <tiatheone@protonmail.com>",
   "license": "MIT",
-  "homepage": "https://tiation.github.io/tiation-wellness-hub",
+  "homepage": "https://tiation.github.io/tiation-react-template",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tiation/tiation-wellness-hub.git"
+    "url": "https://github.com/tiation/tiation-react-template.git"
   },
   "bugs": {
-    "url": "https://github.com/tiation/tiation-wellness-hub/issues"
+    "url": "https://github.com/tiation/tiation-react-template/issues"
   },
   "keywords": [
-    "wellness",
-    "mindfulness",
-    "meditation",
-    "mental-health",
-    "enterprise",
-    "react",
+    "react-template",
     "typescript",
+    "vite",
     "tailwindcss",
+    "shadcn-ui",
+    "enterprise",
     "dark-theme",
+    "template",
+    "starter",
+    "boilerplate",
     "tiation"
   ],
   "scripts": {

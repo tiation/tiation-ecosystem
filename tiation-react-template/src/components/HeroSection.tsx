@@ -37,11 +37,11 @@ const HeroSection = () => {
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-playfair font-bold leading-tight">
                 Welcome to{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">Tiation</span>
-                {' '}Wellness Hub
+                {' '}React Template
               </h1>
               <p className="mobile-text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                Your journey to wellness and mindfulness begins here. Discover inner peace, 
-                cultivate healthy habits, and embrace a life of balance and vitality.
+                A production-ready React template with modern tooling, enterprise-grade architecture, 
+                and dark neon theme. Perfect for building scalable web applications.
               </p>
             </div>
 

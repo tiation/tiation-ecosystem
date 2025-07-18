@@ -92,7 +92,7 @@ jobs:
       uses: treosh/lighthouse-ci-action@v10
       with:
         urls: |
-          https://tiation.github.io/tiation-wellness-hub
+          https://tiation.github.io/tiation-react-template
         configPath: '.lighthouserc.json'
         uploadArtifacts: true
         temporaryPublicStorage: true

@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2024-07-18
 
 ### Added
-- 🎉 Initial release of Tiation Wellness Hub
+- 🎉 Initial release of Tiation React Template
 - 🏗️ Modern React 18.3.1 + TypeScript 5.5.3 architecture
 - 🎨 Dark neon theme with cyan/magenta gradient design
 - 🧘‍♀️ Comprehensive wellness and mindfulness platform
