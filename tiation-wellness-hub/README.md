@@ -1,316 +1,238 @@
-# Tiation Wellness Hub
+# tiation-wellness-hub
 
 <div align="center">
 
-![Tiation Ecosystem](https://img.shields.io/badge/🔮_TIATION_ECOSYSTEM-tiation_wellness_hub-00FFFF?style=for-the-badge&labelColor=0A0A0A&color=00FFFF)
+![tiation-wellness-hub Banner](https://img.shields.io/badge/🔮_TIATION_ECOSYSTEM-tiation-wellness-hub-00FFFF?style=for-the-badge&labelColor=0A0A0A&color=00FFFF)
 
-**Enterprise-grade solution in the Tiation ecosystem**
+**Enterprise-grade solution: tiation-wellness-hub**
 
 *Professional • Scalable • Mission-Driven*
 
-[![🌐_Live_Demo](https://img.shields.io/badge/🌐_Live_Demo-View_Project-00FFFF?style=flat-square&labelColor=0A0A0A)](https://github.com/tiation/tiation-wellness-hub)
-[![📚_Documentation](https://img.shields.io/badge/📚_Documentation-Complete-007FFF?style=flat-square&labelColor=0A0A0A)](https://github.com/tiation/tiation-wellness-hub)
-[![⚡_Status](https://img.shields.io/badge/⚡_Status-Active_Development-FF00FF?style=flat-square&labelColor=0A0A0A)](https://github.com/tiation/tiation-wellness-hub)
-[![📄_License](https://img.shields.io/badge/📄_License-MIT-00FFFF?style=flat-square&labelColor=0A0A0A)](https://github.com/tiation/tiation-wellness-hub)
+[![🌐_Live_Demo](https://img.shields.io/badge/🌐_Live_Demo-View_Project-00FFFF?style=flat-square&labelColor=0A0A0A)](https://tiation.github.io/tiation-wellness-hub)
+[![📚_Documentation](https://img.shields.io/badge/📚_Documentation-Complete-007FFF?style=flat-square&labelColor=0A0A0A)](https://tiation.github.io/tiation-wellness-hub)
+[![🏗️_Architecture](https://img.shields.io/badge/🏗️_Architecture-Diagram-FF00FF?style=flat-square&labelColor=0A0A0A)](https://tiation.github.io/tiation-wellness-hub/architecture)
+[![⚡_Status](https://img.shields.io/badge/⚡_Status-Active Development-FF00FF?style=flat-square&labelColor=0A0A0A)](https://github.com/tiation/tiation-wellness-hub)
+[![📄_License](https://img.shields.io/badge/📄_License-MIT-00FFFF?style=flat-square&labelColor=0A0A0A)](https://github.com/tiation/tiation-wellness-hub/blob/main/LICENSE)
 
 </div>
+
+## 🚀 Overview
+
+Enterprise-grade solution: tiation-wellness-hub
+
+### ✨ Key Features
+
+- 🎯 **Feature 1** - Description 1
+- 🔧 **Feature 2** - Description 2
+- 🌟 **Feature 3** - Description 3
+- 🛡️ **Feature 4** - Description 4
 
 ---
-<div align="center">
-  <img src="https://github.com/tiation/tiation-wellness-hub/blob/main/public/tiation-wellness-logo.png?raw=true" alt="Tiation Wellness Hub Logo" width="200"/>
-  
-  [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://tiation.github.io/tiation-wellness-hub)
-  [![Enterprise Grade](https://img.shields.io/badge/Enterprise-Grade-blue)](https://github.com/tiation/tiation-wellness-hub)
-  [![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-  [![Build Status](https://img.shields.io/badge/Build-Passing-green)](https://github.com/tiation/tiation-wellness-hub/actions)
-  [![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-blue)](https://www.typescriptlang.org/)
-  [![React](https://img.shields.io/badge/React-18.3.1-blue)](https://reactjs.org/)
-  [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4.11-blue)](https://tailwindcss.com/)
-</div>
-
-## 🌟 About
-
-Tiation Wellness Hub is an enterprise-grade wellness and mindfulness platform designed to help individuals and organizations achieve optimal mental health, work-life balance, and overall well-being. Built with modern web technologies and enterprise-level architecture, it provides a comprehensive suite of wellness tools and resources.
-
-### Key Features
-
-- **🧘‍♀️ Mindfulness Programs**: Guided meditation, breathing exercises, and mindfulness training
-- **🌱 Holistic Wellness**: Natural healing approaches and wellness coaching
-- **☀️ Vitality Boosters**: Energy optimization and lifestyle enhancement tools
-- **📊 Analytics Dashboard**: Track wellness metrics and progress
-- **🔒 Enterprise Security**: GDPR compliant with enterprise-grade security
-- **📱 Responsive Design**: Optimized for all devices and screen sizes
-- **🎨 Dark Neon Theme**: Modern UI with cyan/magenta gradient design
-
-## 🚀 Live Demo
-
-Experience the platform: **[https://tiation.github.io/tiation-wellness-hub](https://tiation.github.io/tiation-wellness-hub)**
-
-## 📸 Screenshots
-
-### Desktop Experience
-![Desktop Screenshot](https://github.com/tiation/tiation-wellness-hub/blob/main/docs/screenshots/desktop-hero.png?raw=true)
-
-### Mobile Experience
-![Mobile Screenshot](https://github.com/tiation/tiation-wellness-hub/blob/main/docs/screenshots/mobile-hero.png?raw=true)
-
-### Wellness Dashboard
-![Dashboard Screenshot](https://github.com/tiation/tiation-wellness-hub/blob/main/docs/screenshots/dashboard.png?raw=true)
 
 ## 🏗️ Architecture
 
+![Architecture Diagram](assets/architecture/tiation-wellness-hub-architecture.svg)
+
+### System Components
+
 ```mermaid
 graph TB
-    A[Frontend - React/TypeScript] --> B[Component Library - shadcn/ui]
-    A --> C[Styling - Tailwind CSS]
-    A --> D[State Management - React Query]
-    A --> E[Routing - React Router]
+    A[Component 1] --> B[Component 2]
+    B --> C[Component 3]
+    C --> D[Component 4]
     
-    F[Build System - Vite] --> A
-    G[Type Checking - TypeScript] --> A
-    H[Linting - ESLint] --> A
-    I[Testing - Vitest] --> A
-    
-    J[Deployment - GitHub Pages] --> K[CDN Distribution]
-    L[CI/CD - GitHub Actions] --> J
+    style A fill:#00ffff,stroke:#ff00ff,stroke-width:2px
+    style B fill:#ff00ff,stroke:#00ffff,stroke-width:2px
+    style C fill:#00ffff,stroke:#ff00ff,stroke-width:2px
+    style D fill:#ff00ff,stroke:#00ffff,stroke-width:2px
 ```
 
-## 🛠️ Technology Stack
+### Technology Stack
 
-### Frontend
-- **React 18.3.1** - Modern React with hooks and concurrent features
-- **TypeScript 5.5.3** - Type-safe JavaScript development
-- **Vite 5.4.1** - Lightning-fast build tool and dev server
-- **React Router 6.26.2** - Client-side routing
+- **Frontend**: Modern Frontend
+- **Backend**: Scalable Backend
+- **Database**: Database
+- **Infrastructure**: Infrastructure
 
-### UI & Styling
-- **Tailwind CSS 3.4.11** - Utility-first CSS framework
-- **shadcn/ui** - Modern component library
-- **Lucide React** - Beautiful SVG icons
-- **Framer Motion** - Smooth animations
+---
 
-### State Management
-- **TanStack Query 5.56.2** - Server state management
-- **React Hook Form 7.53.0** - Form validation and management
-- **Zod 3.23.8** - Schema validation
+## 📋 Table of Contents
 
-### Development Tools
-- **ESLint 9.9.0** - Code linting
-- **Prettier** - Code formatting
-- **Husky** - Git hooks
-- **Commitizen** - Conventional commits
+- [Features](#-features)
+- [Quick Start](#-quick-start)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Documentation](#-documentation)
+- [Screenshots](#-screenshots)
+- [FAQ](#-faq)
+- [Contributing](#-contributing)
+- [Support](#-support)
+- [License](#-license)
+- [About Tiation](#-about-tiation)
 
-## 🚀 Quick Start
+---
 
-### Prerequisites
-- Node.js 18.0 or higher
-- npm 9.0 or higher
+## ✨ Features
 
-### Installation
+{{FEATURES_LIST}}
+
+---
+
+## 🏃‍♂️ Quick Start
 
 ```bash
 # Clone the repository
 git clone https://github.com/tiation/tiation-wellness-hub.git
-
-# Navigate to project directory
 cd tiation-wellness-hub
 
 # Install dependencies
-npm install
+{{INSTALL_COMMANDS}}
 
-# Start development server
-npm run dev
+# Run the application
+{{RUN_COMMANDS}}
 ```
 
-### Available Scripts
+---
 
-```bash
-# Development
-npm run dev          # Start development server
-npm run dev:host     # Start dev server with network access
+## 📦 Installation
 
-# Production
-npm run build        # Build for production
-npm run preview      # Preview production build
+### Prerequisites
 
-# Code Quality
-npm run lint         # Run ESLint
-npm run lint:fix     # Fix ESLint issues
-npm run type-check   # Run TypeScript checks
+{{PREREQUISITES}}
 
-# Testing
-npm run test         # Run tests
-npm run test:watch   # Run tests in watch mode
-npm run test:coverage # Run tests with coverage
+### Installation Steps
 
-# Deployment
-npm run deploy       # Deploy to GitHub Pages
-```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/tiation/tiation-wellness-hub.git
+   cd tiation-wellness-hub
+   ```
 
-## 📁 Project Structure
+2. **Install dependencies**
+   ```bash
+   {{DETAILED_INSTALL_COMMANDS}}
+   ```
 
-```
-tiation-wellness-hub/
-├── public/                 # Static assets
-│   ├── images/            # Images and screenshots
-│   └── favicon.ico        # Favicon
-├── src/
-│   ├── components/        # Reusable UI components
-│   │   ├── ui/           # shadcn/ui components
-│   │   ├── layout/       # Layout components
-│   │   └── wellness/     # Wellness-specific components
-│   ├── pages/            # Route pages
-│   ├── hooks/            # Custom React hooks
-│   ├── lib/              # Utility functions
-│   ├── types/            # TypeScript types
-│   └── styles/           # Global styles
-├── docs/                 # Documentation
-│   ├── architecture/     # Architecture diagrams
-│   ├── screenshots/      # Application screenshots
-│   └── api/             # API documentation
-├── tests/               # Test files
-└── .github/             # GitHub workflows
-```
+3. **Configuration**
+   ```bash
+   {{CONFIG_COMMANDS}}
+   ```
 
-## 🎨 Design System
+---
 
-### Color Palette
-- **Primary**: Cyan (#00FFFF) - Main brand color
-- **Secondary**: Magenta (#FF00FF) - Accent color
-- **Background**: Dark (#0A0A0A) - Primary background
-- **Surface**: Dark Gray (#1A1A1A) - Card backgrounds
-- **Text**: White (#FFFFFF) - Primary text
-- **Muted**: Gray (#6B7280) - Secondary text
+## 🎯 Usage
 
-### Typography
-- **Primary Font**: Inter - Clean, modern sans-serif
-- **Display Font**: Playfair Display - Elegant serif for headings
-- **Monospace**: JetBrains Mono - Code and technical content
+### Basic Usage
 
-### Components
-All components follow the [shadcn/ui design system](https://ui.shadcn.com/) with custom Tiation branding and dark neon theme.
+{{BASIC_USAGE}}
 
-## 🔧 Configuration
+### Advanced Usage
 
-### Environment Variables
-```env
-VITE_API_URL=https://api.tiation.com
-VITE_APP_NAME=Tiation Wellness Hub
-VITE_ENVIRONMENT=production
-```
+{{ADVANCED_USAGE}}
 
-### Deployment Configuration
-The application is configured for GitHub Pages deployment with:
-- Custom domain support
-- HTTPS enforcement
-- SPA routing support
-- Asset optimization
+### Examples
 
-## 📊 Performance
+{{USAGE_EXAMPLES}}
 
-### Core Web Vitals
-- **First Contentful Paint**: < 1.5s
-- **Largest Contentful Paint**: < 2.5s
-- **Cumulative Layout Shift**: < 0.1
-- **First Input Delay**: < 100ms
+---
 
-### Bundle Analysis
-- **Initial Bundle Size**: ~50KB (gzipped)
-- **Vendor Chunks**: Optimized for caching
-- **Code Splitting**: Route-based splitting
-- **Tree Shaking**: Unused code elimination
+## 📚 Documentation
 
-## 🔒 Security
+- **[User Guide](docs/user-guide.md)** - Complete user documentation
+- **[API Reference](docs/api-reference.md)** - Technical API documentation
+- **[Architecture](docs/architecture.md)** - System architecture overview
+- **[Deployment Guide](docs/deployment.md)** - Production deployment instructions
+- **[Developer Guide](docs/developer-guide.md)** - Development setup and guidelines
 
-### Security Features
-- **Content Security Policy**: Strict CSP headers
-- **HTTPS Enforcement**: All traffic encrypted
-- **XSS Protection**: Built-in React protections
-- **Data Sanitization**: Input validation with Zod
-- **Privacy Compliance**: GDPR compliant
+### Live Documentation
 
-### Security Headers
-```
-Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'
-X-Content-Type-Options: nosniff
-X-Frame-Options: DENY
-X-XSS-Protection: 1; mode=block
-```
+Visit our [GitHub Pages site](https://tiation.github.io/tiation-wellness-hub) for interactive documentation.
 
-## 📈 Analytics & Monitoring
+---
 
-### Integrated Analytics
-- **Google Analytics 4**: User behavior tracking
-- **Performance Monitoring**: Core Web Vitals
-- **Error Tracking**: Sentry integration
-- **Accessibility Monitoring**: Automated a11y checks
+## 📸 Screenshots
+
+<div align="center">
+  <img src="assets/screenshots/main-interface.png" alt="Main Interface" width="800">
+  <p><em>Main application interface</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/screenshots/dashboard.png" alt="Dashboard" width="800">
+  <p><em>Analytics dashboard</em></p>
+</div>
+
+---
+
+## ❓ FAQ
+
+### General Questions
+
+**Q: What makes this solution enterprise-grade?**
+A: Our solution includes comprehensive security, scalability, monitoring, and enterprise integration features with professional support.
+
+**Q: Is this compatible with existing systems?**
+A: Yes, we provide extensive API and integration capabilities for seamless system integration.
+
+**Q: What support options are available?**
+A: We offer community support through GitHub Issues and professional enterprise support for commercial users.
+
+### Technical Questions
+
+**Q: What are the system requirements?**
+A: {{SYSTEM_REQUIREMENTS}}
+
+**Q: How do I handle large scale deployments?**
+A: See our [Deployment Guide](docs/deployment.md) for enterprise-scale deployment strategies.
+
+**Q: Are there any security considerations?**
+A: Yes, please review our [Security Guide](docs/security.md) for comprehensive security best practices.
+
+### Troubleshooting
+
+**Q: Common installation issues**
+A: Check our [Troubleshooting Guide](docs/troubleshooting.md) for solutions to common problems.
+
+**Q: Performance optimization**
+A: Refer to our [Performance Guide](docs/performance.md) for optimization strategies.
+
+---
 
 ## 🤝 Contributing
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
-### Development Workflow
+### Development Setup
+
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+2. Create a feature branch
+3. Make your changes
+4. Add tests
+5. Submit a pull request
 
-### Code Standards
-- Follow TypeScript best practices
-- Use conventional commits
-- Write tests for new features
-- Update documentation
-- Ensure accessibility compliance
+### Code of Conduct
 
-## 📚 Documentation
-
-### API Documentation
-- **[API Reference](docs/api/README.md)** - Complete API documentation
-- **[Component Library](docs/components/README.md)** - UI component documentation
-- **[Deployment Guide](docs/deployment/README.md)** - Deployment instructions
-
-### Architecture Documentation
-- **[System Architecture](docs/architecture/system-overview.md)** - High-level architecture
-- **[Data Flow](docs/architecture/data-flow.md)** - Data management patterns
-- **[Security Architecture](docs/architecture/security.md)** - Security implementation
-
-## 🔄 Changelog
-
-See [CHANGELOG.md](CHANGELOG.md) for version history and release notes.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [shadcn/ui](https://ui.shadcn.com/) for the amazing component library
-- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
-- [React](https://reactjs.org/) for the powerful UI library
-- [Vite](https://vitejs.dev/) for the lightning-fast build tool
-
-## 📞 Support
-
-### Community Support
-- **GitHub Issues**: [Report bugs and feature requests](https://github.com/tiation/tiation-wellness-hub/issues)
-- **Discussions**: [Join the community](https://github.com/tiation/tiation-wellness-hub/discussions)
-- **Email**: [tiatheone@protonmail.com](mailto:tiatheone@protonmail.com)
-
-### Enterprise Support
-For enterprise support, custom implementations, or consulting services, contact us at [tiatheone@protonmail.com](mailto:tiatheone@protonmail.com).
+Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing.
 
 ---
 
-<div align="center">
-  <p>Built with ❤️ by the Tiation Team</p>
-  <p>
-    <a href="https://github.com/tiation/tiation-wellness-hub">⭐ Star on GitHub</a> •
-    <a href="https://tiation.github.io/tiation-wellness-hub">🌐 Live Demo</a> •
-    <a href="https://github.com/tiation/tiation-wellness-hub/issues">🐛 Report Bug</a> •
-    <a href="https://github.com/tiation/tiation-wellness-hub/discussions">💬 Discussions</a>
-  </p>
-</div>
+## 🆘 Support
+
+### Community Support
+
+- **GitHub Issues**: [Report bugs or request features](https://github.com/tiation/tiation-wellness-hub/issues)
+- **Discussions**: [Join community discussions](https://github.com/tiation/tiation-wellness-hub/discussions)
+- **Documentation**: [Browse our documentation](https://tiation.github.io/tiation-wellness-hub)
+
+### Enterprise Support
+
+For enterprise customers, we offer:
+- Priority support
+- Custom development
+- Training and consultation
+- SLA guarantees
+
+Contact us at [tiatheone@protonmail.com](mailto:tiatheone@protonmail.com)
 
 ---
 
@@ -318,12 +240,49 @@ For enterprise support, custom implementations, or consulting services, contact 
 
 This repository is part of the Tiation ecosystem. Explore related projects:
 
-- [🌟 TiaAstor](https://github.com/TiaAstor/TiaAstor) - Personal brand and story
+- [🌟 Tiation Platform](https://github.com/tiation/tiation-ai-platform) - Enterprise AI platform
+- [🤖 AI Agents](https://github.com/tiation/tiation-ai-agents) - Intelligent automation
+- [⚡ Terminal Workflows](https://github.com/tiation/tiation-terminal-workflows) - Developer tools
+- [🐳 Docker Solutions](https://github.com/tiation/tiation-docker-debian) - Container orchestration
+- [📝 CMS](https://github.com/tiation/tiation-cms) - Content management system
 - [🐰 ChaseWhiteRabbit NGO](https://github.com/tiation/tiation-chase-white-rabbit-ngo) - Social impact initiatives
 - [🏗️ Infrastructure](https://github.com/tiation/tiation-rigger-infrastructure) - Enterprise infrastructure
-- [🤖 AI Agents](https://github.com/tiation/tiation-ai-agents) - Intelligent automation
-- [📝 CMS](https://github.com/tiation/tiation-cms) - Content management system
-- [⚡ Terminal Workflows](https://github.com/tiation/tiation-terminal-workflows) - Developer tools
 
 ---
-*Built with 💜 by the Tiation team*
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🌟 About Tiation
+
+**Tiation** is a leading provider of enterprise-grade software solutions, specializing in automation, productivity, and system integration tools. Our mission is to empower organizations with cutting-edge technology that drives efficiency and innovation.
+
+### Our Solutions
+
+- **Automation Platform**: Comprehensive business process automation
+- **Developer Tools**: Professional development and deployment tools
+- **Enterprise Integration**: Seamless system integration solutions
+- **Security Framework**: Advanced security and compliance tools
+
+### Connect With Us
+
+- **Website**: [https://github.com/tiation](https://github.com/tiation)
+- **GitHub**: [https://github.com/tiation](https://github.com/tiation)
+- **LinkedIn**: [Tiation Company](https://linkedin.com/company/tiation)
+- **Twitter**: [@TiationTech](https://twitter.com/TiationTech)
+
+---
+
+<div align="center">
+  <p>
+    <strong>Built with ❤️ by the Tiation Team</strong>
+  </p>
+  <p>
+    <a href="https://github.com/tiation">
+      <img src="https://img.shields.io/badge/Powered%20by-Tiation-cyan.svg" alt="Powered by Tiation">
+    </a>
+  </p>
+</div>

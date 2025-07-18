@@ -1,373 +1,488 @@
 #!/usr/bin/env python3
 """
-Tiation Architecture Diagram Generator
-Generate enterprise-grade architecture diagrams for all Tiation repositories
+Architecture Diagram Generator for Tiation Repositories
+
+This script generates SVG architecture diagrams for each repository
+using a consistent dark neon theme that aligns with the Tiation brand.
 """
 
 import os
-import json
+import sys
 from pathlib import Path
 from typing import Dict, List, Tuple
-import matplotlib.pyplot as plt
-import matplotlib.patches as patches
-from matplotlib.patches import FancyBboxPatch, Rectangle, Circle, Arrow
-import numpy as np
 
-# Tiation Dark Neon Theme Colors
-COLORS = {
-    'primary_dark': '#0A0A0A',
-    'cyan_primary': '#00FFFF',
-    'neon_pink': '#FF00FF',
-    'purple': '#8B5CF6',
-    'indigo': '#6366F1',
-    'teal': '#14B8A6',
-    'blue': '#007FFF',
-    'white': '#FFFFFF',
-    'gray': '#6B7280',
-    'dark_gray': '#1F2937',
-    'light_gray': '#E5E7EB'
-}
-
-# Repository architecture patterns
-REPO_ARCHITECTURES = {
-    'tiation-ai-agents': {
-        'type': 'mobile_web_platform',
-        'components': [
-            {'name': 'React Native Mobile App', 'type': 'frontend', 'pos': (1, 4)},
-            {'name': 'Web Dashboard', 'type': 'frontend', 'pos': (3, 4)},
-            {'name': 'AI Agent Engine', 'type': 'backend', 'pos': (2, 3)},
-            {'name': 'API Gateway', 'type': 'backend', 'pos': (2, 2)},
-            {'name': 'PostgreSQL Database', 'type': 'database', 'pos': (1, 1)},
-            {'name': 'Redis Cache', 'type': 'cache', 'pos': (3, 1)},
-            {'name': 'ML Models', 'type': 'ml', 'pos': (4, 2)}
+# Architecture definitions for key repositories
+ARCHITECTURE_CONFIGS = {
+    "tiation-ai-platform": {
+        "title": "Tiation AI Platform Architecture",
+        "components": [
+            ("User Interface", "React/TypeScript Frontend", "#00FFFF"),
+            ("API Gateway", "Request Router & Auth", "#FF00FF"),
+            ("AI Engine", "ML/NLP Processing", "#00FF88"),
+            ("Data Pipeline", "ETL & Analytics", "#FFD700"),
+            ("Database", "PostgreSQL & Redis", "#FF4500"),
+            ("Infrastructure", "Docker/Kubernetes", "#8A2BE2")
         ],
-        'connections': [
-            (0, 2), (1, 2), (2, 3), (3, 4), (3, 5), (2, 6)
+        "connections": [
+            ("User Interface", "API Gateway"),
+            ("API Gateway", "AI Engine"),
+            ("AI Engine", "Data Pipeline"),
+            ("Data Pipeline", "Database"),
+            ("API Gateway", "Database"),
+            ("Infrastructure", "API Gateway"),
+            ("Infrastructure", "AI Engine"),
+            ("Infrastructure", "Data Pipeline"),
+            ("Infrastructure", "Database")
         ]
     },
-    'tiation-cms': {
-        'type': 'headless_cms',
-        'components': [
-            {'name': 'Admin Dashboard', 'type': 'frontend', 'pos': (1, 4)},
-            {'name': 'Content API', 'type': 'api', 'pos': (3, 4)},
-            {'name': 'CMS Core', 'type': 'backend', 'pos': (2, 3)},
-            {'name': 'Multi-Tenant Manager', 'type': 'backend', 'pos': (2, 2)},
-            {'name': 'PostgreSQL', 'type': 'database', 'pos': (1, 1)},
-            {'name': 'CDN', 'type': 'cdn', 'pos': (4, 3)},
-            {'name': 'File Storage', 'type': 'storage', 'pos': (3, 1)}
+    "tiation-ai-agents": {
+        "title": "AI Agents Architecture",
+        "components": [
+            ("Agent Interface", "Web/Mobile Interface", "#00FFFF"),
+            ("Agent Core", "Core Agent Logic", "#FF00FF"),
+            ("NLP Engine", "Natural Language Processing", "#00FF88"),
+            ("Task Manager", "Task Scheduling", "#FFD700"),
+            ("Learning System", "ML Training & Inference", "#FF4500"),
+            ("Integration Layer", "External APIs", "#8A2BE2")
         ],
-        'connections': [
-            (0, 2), (1, 2), (2, 3), (3, 4), (2, 5), (3, 6)
+        "connections": [
+            ("Agent Interface", "Agent Core"),
+            ("Agent Core", "NLP Engine"),
+            ("Agent Core", "Task Manager"),
+            ("Agent Core", "Learning System"),
+            ("Agent Core", "Integration Layer"),
+            ("Task Manager", "Integration Layer"),
+            ("Learning System", "NLP Engine")
         ]
     },
-    'tiation-docker-debian': {
-        'type': 'containerization',
-        'components': [
-            {'name': 'Docker Images', 'type': 'container', 'pos': (2, 4)},
-            {'name': 'Debian Base', 'type': 'os', 'pos': (1, 3)},
-            {'name': 'Security Layer', 'type': 'security', 'pos': (3, 3)},
-            {'name': 'Container Registry', 'type': 'registry', 'pos': (2, 2)},
-            {'name': 'Orchestration', 'type': 'orchestration', 'pos': (2, 1)}
+    "tiation-terminal-workflows": {
+        "title": "Terminal Workflows Architecture",
+        "components": [
+            ("Terminal UI", "Interactive Interface", "#00FFFF"),
+            ("Workflow Engine", "Execution Engine", "#FF00FF"),
+            ("Script Manager", "Script Repository", "#00FF88"),
+            ("Configuration", "Settings & Profiles", "#FFD700"),
+            ("Integration API", "External Tools", "#FF4500"),
+            ("File System", "Local Storage", "#8A2BE2")
         ],
-        'connections': [
-            (0, 1), (0, 2), (0, 3), (3, 4)
+        "connections": [
+            ("Terminal UI", "Workflow Engine"),
+            ("Workflow Engine", "Script Manager"),
+            ("Workflow Engine", "Configuration"),
+            ("Workflow Engine", "Integration API"),
+            ("Script Manager", "File System"),
+            ("Configuration", "File System"),
+            ("Integration API", "File System")
         ]
     },
-    'liberation-system': {
-        'type': 'economic_platform',
-        'components': [
-            {'name': 'Truth Network UI', 'type': 'frontend', 'pos': (1, 4)},
-            {'name': 'Resource Distribution', 'type': 'frontend', 'pos': (3, 4)},
-            {'name': 'Economic Engine', 'type': 'backend', 'pos': (2, 3)},
-            {'name': 'Mesh Network', 'type': 'network', 'pos': (4, 3)},
-            {'name': 'Blockchain Layer', 'type': 'blockchain', 'pos': (2, 2)},
-            {'name': 'Data Analytics', 'type': 'analytics', 'pos': (1, 1)},
-            {'name': 'Community Pool', 'type': 'storage', 'pos': (3, 1)}
+    "tiation-docker-debian": {
+        "title": "Docker Debian Architecture",
+        "components": [
+            ("Base Images", "Debian Base Containers", "#00FFFF"),
+            ("Security Layer", "Security Hardening", "#FF00FF"),
+            ("Orchestration", "Container Management", "#00FF88"),
+            ("Monitoring", "Logging & Metrics", "#FFD700"),
+            ("Registry", "Image Repository", "#FF4500"),
+            ("Deployment", "Production Deploy", "#8A2BE2")
         ],
-        'connections': [
-            (0, 2), (1, 2), (2, 3), (2, 4), (4, 5), (4, 6)
+        "connections": [
+            ("Base Images", "Security Layer"),
+            ("Security Layer", "Orchestration"),
+            ("Orchestration", "Monitoring"),
+            ("Base Images", "Registry"),
+            ("Orchestration", "Deployment"),
+            ("Monitoring", "Deployment"),
+            ("Registry", "Deployment")
         ]
     },
-    'tiation-terminal-workflows': {
-        'type': 'automation_platform',
-        'components': [
-            {'name': 'Terminal Interface', 'type': 'frontend', 'pos': (2, 4)},
-            {'name': 'Workflow Engine', 'type': 'backend', 'pos': (2, 3)},
-            {'name': 'Script Repository', 'type': 'storage', 'pos': (1, 2)},
-            {'name': 'Automation APIs', 'type': 'api', 'pos': (3, 2)},
-            {'name': 'Log Database', 'type': 'database', 'pos': (2, 1)}
+    "tiation-cms": {
+        "title": "Headless CMS Architecture",
+        "components": [
+            ("Admin Dashboard", "Content Management UI", "#00FFFF"),
+            ("Content API", "GraphQL/REST API", "#FF00FF"),
+            ("Media Manager", "Asset Management", "#00FF88"),
+            ("User Management", "Authentication & Authorization", "#FFD700"),
+            ("Database", "Content Storage", "#FF4500"),
+            ("CDN", "Content Delivery", "#8A2BE2")
         ],
-        'connections': [
-            (0, 1), (1, 2), (1, 3), (1, 4)
+        "connections": [
+            ("Admin Dashboard", "Content API"),
+            ("Content API", "Media Manager"),
+            ("Content API", "User Management"),
+            ("Content API", "Database"),
+            ("Media Manager", "CDN"),
+            ("User Management", "Database"),
+            ("Database", "CDN")
         ]
     },
-    'tiation-chase-white-rabbit-ngo': {
-        'type': 'ngo_platform',
-        'components': [
-            {'name': 'GriefToDesign App', 'type': 'frontend', 'pos': (1, 4)},
-            {'name': 'Community Portal', 'type': 'frontend', 'pos': (3, 4)},
-            {'name': 'NGO Management', 'type': 'backend', 'pos': (2, 3)},
-            {'name': 'Payment Processing', 'type': 'payment', 'pos': (4, 3)},
-            {'name': 'User Database', 'type': 'database', 'pos': (1, 2)},
-            {'name': 'Document Storage', 'type': 'storage', 'pos': (3, 2)},
-            {'name': 'Analytics Engine', 'type': 'analytics', 'pos': (2, 1)}
+    "DiceRollerSimulator": {
+        "title": "Dice Roller Simulator Architecture",
+        "components": [
+            ("Web Interface", "HTML5/CSS3/JS UI", "#00FFFF"),
+            ("Dice Engine", "Random Number Generator", "#FF00FF"),
+            ("Game Logic", "Rules & Mechanics", "#00FF88"),
+            ("Statistics", "Roll Analytics", "#FFD700"),
+            ("Local Storage", "User Preferences", "#FF4500"),
+            ("Animation", "Visual Effects", "#8A2BE2")
         ],
-        'connections': [
-            (0, 2), (1, 2), (2, 3), (2, 4), (2, 5), (2, 6)
+        "connections": [
+            ("Web Interface", "Dice Engine"),
+            ("Dice Engine", "Game Logic"),
+            ("Game Logic", "Statistics"),
+            ("Web Interface", "Statistics"),
+            ("Web Interface", "Local Storage"),
+            ("Web Interface", "Animation"),
+            ("Dice Engine", "Animation")
+        ]
+    },
+    "tiation-chase-white-rabbit-ngo": {
+        "title": "Chase White Rabbit NGO Architecture",
+        "components": [
+            ("Community Portal", "Public Interface", "#00FFFF"),
+            ("Admin Dashboard", "Management Interface", "#FF00FF"),
+            ("Event Manager", "Event Coordination", "#00FF88"),
+            ("Impact Tracker", "Social Impact Metrics", "#FFD700"),
+            ("Volunteer Portal", "Community Engagement", "#FF4500"),
+            ("Database", "Data Storage", "#8A2BE2")
+        ],
+        "connections": [
+            ("Community Portal", "Event Manager"),
+            ("Admin Dashboard", "Event Manager"),
+            ("Event Manager", "Impact Tracker"),
+            ("Community Portal", "Volunteer Portal"),
+            ("Event Manager", "Database"),
+            ("Impact Tracker", "Database"),
+            ("Volunteer Portal", "Database")
         ]
     }
 }
 
-# Component type styling
-COMPONENT_STYLES = {
-    'frontend': {'color': COLORS['cyan_primary'], 'shape': 'round'},
-    'backend': {'color': COLORS['neon_pink'], 'shape': 'rect'},
-    'database': {'color': COLORS['purple'], 'shape': 'cylinder'},
-    'api': {'color': COLORS['teal'], 'shape': 'diamond'},
-    'cache': {'color': COLORS['indigo'], 'shape': 'rect'},
-    'ml': {'color': COLORS['blue'], 'shape': 'hexagon'},
-    'storage': {'color': COLORS['purple'], 'shape': 'rect'},
-    'security': {'color': COLORS['neon_pink'], 'shape': 'shield'},
-    'network': {'color': COLORS['cyan_primary'], 'shape': 'cloud'},
-    'blockchain': {'color': COLORS['teal'], 'shape': 'chain'},
-    'analytics': {'color': COLORS['blue'], 'shape': 'chart'},
-    'payment': {'color': COLORS['cyan_primary'], 'shape': 'diamond'},
-    'container': {'color': COLORS['indigo'], 'shape': 'rect'},
-    'os': {'color': COLORS['gray'], 'shape': 'rect'},
-    'registry': {'color': COLORS['purple'], 'shape': 'rect'},
-    'orchestration': {'color': COLORS['neon_pink'], 'shape': 'rect'},
-    'cdn': {'color': COLORS['teal'], 'shape': 'cloud'}
-}
-
-def create_architecture_diagram(repo_name: str, architecture: Dict, output_path: str):
-    """Create an architecture diagram for a repository"""
+def generate_svg_architecture(repo_name: str, config: Dict) -> str:
+    """Generate an SVG architecture diagram for a repository"""
     
-    # Create figure with dark theme
-    fig, ax = plt.subplots(1, 1, figsize=(12, 8))
-    fig.patch.set_facecolor(COLORS['primary_dark'])
-    ax.set_facecolor(COLORS['primary_dark'])
+    # SVG dimensions and styling
+    width = 1000
+    height = 700
+    margin = 60
     
-    # Hide axes
-    ax.set_xlim(0, 5)
-    ax.set_ylim(0, 5)
-    ax.axis('off')
+    # Calculate component positions
+    components = config["components"]
+    connections = config["connections"]
+    
+    # Create a grid layout for components
+    cols = 3
+    rows = (len(components) + cols - 1) // cols
+    
+    comp_width = (width - 2 * margin) / cols - 30
+    comp_height = (height - 2 * margin - 100) / rows - 30
+    
+    # Position components
+    positions = {}
+    for i, (name, desc, color) in enumerate(components):
+        row = i // cols
+        col = i % cols
+        x = margin + col * (comp_width + 30) + comp_width / 2
+        y = margin + 80 + row * (comp_height + 30) + comp_height / 2
+        positions[name] = (x, y, color)
+    
+    # Start SVG
+    svg = f'''<svg width="{width}" height="{height}" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            .component {{
+                font-family: 'Courier New', monospace;
+                font-size: 14px;
+                font-weight: bold;
+                text-anchor: middle;
+                dominant-baseline: middle;
+            }}
+            .component-desc {{
+                font-family: 'Courier New', monospace;
+                font-size: 11px;
+                font-weight: normal;
+                text-anchor: middle;
+                dominant-baseline: middle;
+            }}
+            .title {{
+                font-family: 'Courier New', monospace;
+                font-size: 24px;
+                font-weight: bold;
+                text-anchor: middle;
+                fill: #00FFFF;
+                filter: drop-shadow(0 0 10px #00FFFF);
+            }}
+            .subtitle {{
+                font-family: 'Courier New', monospace;
+                font-size: 14px;
+                font-weight: normal;
+                text-anchor: middle;
+                fill: #FFFFFF;
+                opacity: 0.8;
+            }}
+            .connection {{
+                stroke: #00FF88;
+                stroke-width: 2;
+                stroke-opacity: 0.7;
+                marker-end: url(#arrowhead);
+                filter: drop-shadow(0 0 3px #00FF88);
+            }}
+            .glow {{
+                filter: drop-shadow(0 0 8px currentColor);
+            }}
+            .component-box {{
+                filter: drop-shadow(0 0 10px currentColor);
+            }}
+        </style>
+        <marker id="arrowhead" markerWidth="12" markerHeight="10" 
+                refX="10" refY="5" orient="auto">
+            <polygon points="0 0, 12 5, 0 10" fill="#00FF88" />
+        </marker>
+        <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#0A0A0A;stop-opacity:1" />
+            <stop offset="30%" style="stop-color:#1A1A2E;stop-opacity:1" />
+            <stop offset="70%" style="stop-color:#16213E;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#0A0A0A;stop-opacity:1" />
+        </linearGradient>
+        <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#00FFFF;stop-opacity:0.1" />
+            <stop offset="100%" style="stop-color:#FF00FF;stop-opacity:0.05" />
+        </radialGradient>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="{width}" height="{height}" fill="url(#bg)" />
+    <rect width="{width}" height="{height}" fill="url(#centerGlow)" />
+    
+    <!-- Title -->
+    <text x="{width/2}" y="40" class="title">{config["title"]}</text>
+    <text x="{width/2}" y="65" class="subtitle">🔮 Tiation Ecosystem • Enterprise Architecture</text>
+    
+    <!-- Grid lines for visual structure -->
+    <defs>
+        <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+            <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#00FFFF" stroke-width="0.5" opacity="0.1"/>
+        </pattern>
+    </defs>
+    <rect width="{width}" height="{height}" fill="url(#grid)" />
+    
+    <!-- Connections -->
+'''
+    
+    # Draw connections first (so they appear behind components)
+    for from_comp, to_comp in connections:
+        if from_comp in positions and to_comp in positions:
+            x1, y1, _ = positions[from_comp]
+            x2, y2, _ = positions[to_comp]
+            
+            # Calculate control points for curved connections
+            mid_x = (x1 + x2) / 2
+            mid_y = (y1 + y2) / 2
+            
+            # Create smooth curved path
+            svg += f'''    <path d="M {x1} {y1} Q {mid_x} {mid_y - 20} {x2} {y2}" 
+                  class="connection" fill="none" />
+'''
     
     # Draw components
-    components = architecture['components']
-    positions = {}
+    for name, desc, color in components:
+        if name in positions:
+            x, y, _ = positions[name]
+            
+            # Component dimensions
+            box_width = comp_width * 0.8
+            box_height = comp_height * 0.6
+            
+            svg += f'''    
+    <!-- {name} -->
+    <g class="component-box">
+        <rect x="{x - box_width/2}" y="{y - box_height/2}" 
+              width="{box_width}" height="{box_height}" 
+              fill="{color}" fill-opacity="0.15" 
+              stroke="{color}" stroke-width="2" 
+              rx="15" ry="15" />
+        <rect x="{x - box_width/2 + 2}" y="{y - box_height/2 + 2}" 
+              width="{box_width - 4}" height="{box_height - 4}" 
+              fill="none" 
+              stroke="{color}" stroke-width="1" stroke-opacity="0.3"
+              rx="13" ry="13" />
+        <text x="{x}" y="{y - 8}" class="component" fill="{color}">{name}</text>
+        <text x="{x}" y="{y + 12}" class="component-desc" fill="#FFFFFF" opacity="0.8">{desc}</text>
+    </g>
+'''
     
-    for i, comp in enumerate(components):
-        x, y = comp['pos']
-        positions[i] = (x, y)
-        
-        # Get component style
-        comp_type = comp['type']
-        style = COMPONENT_STYLES.get(comp_type, COMPONENT_STYLES['backend'])
-        
-        # Create component box
-        if style['shape'] == 'round':
-            circle = Circle((x, y), 0.3, facecolor=style['color'], 
-                          edgecolor=COLORS['white'], linewidth=2, alpha=0.8)
-            ax.add_patch(circle)
-        else:
-            rect = FancyBboxPatch((x-0.4, y-0.2), 0.8, 0.4, 
-                                boxstyle="round,pad=0.05",
-                                facecolor=style['color'], 
-                                edgecolor=COLORS['white'], 
-                                linewidth=2, alpha=0.8)
-            ax.add_patch(rect)
-        
-        # Add component label
-        ax.text(x, y-0.6, comp['name'], ha='center', va='center', 
-                fontsize=9, color=COLORS['white'], weight='bold',
-                bbox=dict(boxstyle="round,pad=0.3", facecolor=COLORS['dark_gray'], 
-                         alpha=0.7, edgecolor=style['color']))
+    # Add decorative elements
+    svg += f'''
+    <!-- Decorative corner elements -->
+    <circle cx="30" cy="30" r="3" fill="#00FFFF" opacity="0.5" />
+    <circle cx="{width-30}" cy="30" r="3" fill="#FF00FF" opacity="0.5" />
+    <circle cx="30" cy="{height-30}" r="3" fill="#00FF88" opacity="0.5" />
+    <circle cx="{width-30}" cy="{height-30}" r="3" fill="#FFD700" opacity="0.5" />
     
-    # Draw connections
-    for conn in architecture['connections']:
-        start_idx, end_idx = conn
-        start_pos = positions[start_idx]
-        end_pos = positions[end_idx]
-        
-        # Draw arrow
-        ax.annotate('', xy=end_pos, xytext=start_pos,
-                   arrowprops=dict(arrowstyle='->', color=COLORS['cyan_primary'],
-                                 lw=2, alpha=0.7))
+    <!-- Tiation branding -->
+    <text x="30" y="{height-15}" class="component-desc" fill="#00FFFF" text-anchor="start" opacity="0.7">
+        Built with 💜 by Tiation • Enterprise-grade Architecture
+    </text>
     
-    # Add title
-    title = f"{repo_name.replace('-', ' ').title()} Architecture"
-    ax.text(2.5, 4.7, title, ha='center', va='center', 
-            fontsize=16, color=COLORS['cyan_primary'], weight='bold')
+    <!-- Version info -->
+    <text x="{width-30}" y="{height-15}" class="component-desc" fill="#FFFFFF" text-anchor="end" opacity="0.5">
+        v1.0 • {repo_name}
+    </text>
     
-    # Add legend for component types
-    legend_y = 0.3
-    legend_types = set(comp['type'] for comp in components)
-    for i, comp_type in enumerate(sorted(legend_types)):
-        style = COMPONENT_STYLES.get(comp_type, COMPONENT_STYLES['backend'])
-        ax.text(0.2 + (i % 3) * 1.5, legend_y - (i // 3) * 0.15, 
-                comp_type.replace('_', ' ').title(),
-                ha='left', va='center', fontsize=8, color=style['color'],
-                bbox=dict(boxstyle="round,pad=0.2", facecolor=COLORS['dark_gray'], 
-                         alpha=0.5, edgecolor=style['color']))
+</svg>'''
     
-    # Save the diagram
-    plt.tight_layout()
-    plt.savefig(output_path, dpi=300, bbox_inches='tight', 
-                facecolor=COLORS['primary_dark'], edgecolor='none')
-    plt.close()
-    
-    print(f"✅ Created architecture diagram: {output_path}")
+    return svg
 
-def generate_all_diagrams():
-    """Generate architecture diagrams for all repositories"""
-    
+def create_architecture_diagrams():
+    """Create architecture diagrams for all configured repositories"""
     base_path = Path("/Users/tiaastor/tiation-github")
     
-    for repo_name, architecture in REPO_ARCHITECTURES.items():
+    print("🏗️ Generating architecture diagrams...")
+    
+    generated_count = 0
+    
+    for repo_name, config in ARCHITECTURE_CONFIGS.items():
         repo_path = base_path / repo_name
         
-        if repo_path.exists():
-            # Create .screenshots directory if it doesn't exist
-            screenshots_dir = repo_path / ".screenshots"
-            screenshots_dir.mkdir(exist_ok=True)
-            
-            # Generate architecture diagram
-            output_path = screenshots_dir / "architecture-diagram.png"
-            create_architecture_diagram(repo_name, architecture, str(output_path))
-            
-            # Also create an enhanced version with more details
-            enhanced_output_path = screenshots_dir / "system-architecture.png"
-            create_enhanced_architecture_diagram(repo_name, architecture, str(enhanced_output_path))
-        else:
-            print(f"⚠️  Repository {repo_name} not found at {repo_path}")
+        if not repo_path.exists():
+            print(f"❌ Repository {repo_name} not found")
+            continue
+        
+        # Create assets/architecture directory
+        arch_dir = repo_path / "assets" / "architecture"
+        arch_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Generate SVG
+        svg_content = generate_svg_architecture(repo_name, config)
+        
+        # Save SVG file
+        svg_path = arch_dir / f"{repo_name}-architecture.svg"
+        with open(svg_path, 'w', encoding='utf-8') as f:
+            f.write(svg_content)
+        
+        print(f"✅ Generated architecture diagram for {repo_name}")
+        generated_count += 1
+    
+    print(f"\n🎉 Generated {generated_count} architecture diagrams successfully!")
 
-def create_enhanced_architecture_diagram(repo_name: str, architecture: Dict, output_path: str):
-    """Create an enhanced architecture diagram with more technical details"""
+def create_placeholder_screenshots():
+    """Create placeholder screenshots for repositories"""
+    base_path = Path("/Users/tiaastor/tiation-github")
     
-    # Create figure with larger size for more details
-    fig, ax = plt.subplots(1, 1, figsize=(16, 12))
-    fig.patch.set_facecolor(COLORS['primary_dark'])
-    ax.set_facecolor(COLORS['primary_dark'])
+    print("📸 Creating placeholder screenshots...")
     
-    # Hide axes
-    ax.set_xlim(0, 8)
-    ax.set_ylim(0, 8)
-    ax.axis('off')
+    # Enhanced SVG placeholder with dark neon theme
+    def create_placeholder_svg(repo_name: str, screenshot_type: str) -> str:
+        return f'''<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#0A0A0A;stop-opacity:1" />
+            <stop offset="30%" style="stop-color:#1A1A2E;stop-opacity:1" />
+            <stop offset="70%" style="stop-color:#16213E;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#0A0A0A;stop-opacity:1" />
+        </linearGradient>
+        <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#00FFFF;stop-opacity:0.2" />
+            <stop offset="100%" style="stop-color:#FF00FF;stop-opacity:0.1" />
+        </radialGradient>
+    </defs>
     
-    # Draw components with enhanced styling
-    components = architecture['components']
-    positions = {}
+    <rect width="800" height="600" fill="url(#bg)" />
+    <rect width="800" height="600" fill="url(#glow)" />
     
-    for i, comp in enumerate(components):
-        x, y = comp['pos']
-        # Scale positions for larger canvas
-        x = x * 1.5 + 1
-        y = y * 1.5 + 1
-        positions[i] = (x, y)
+    <!-- Mock interface elements -->
+    <rect x="50" y="50" width="700" height="60" fill="#1A1A2E" stroke="#00FFFF" stroke-width="2" rx="10" />
+    <text x="400" y="85" text-anchor="middle" 
+          font-family="Courier New, monospace" 
+          font-size="18px" font-weight="bold" 
+          fill="#00FFFF">
+        🔮 {repo_name.replace('-', ' ').title()}
+    </text>
+    
+    <!-- Mock content area -->
+    <rect x="50" y="130" width="700" height="400" fill="#16213E" fill-opacity="0.5" stroke="#FF00FF" stroke-width="1" rx="5" />
+    
+    <!-- Mock navigation -->
+    <rect x="70" y="150" width="100" height="30" fill="#00FFFF" fill-opacity="0.3" stroke="#00FFFF" stroke-width="1" rx="5" />
+    <rect x="190" y="150" width="100" height="30" fill="#FF00FF" fill-opacity="0.3" stroke="#FF00FF" stroke-width="1" rx="5" />
+    <rect x="310" y="150" width="100" height="30" fill="#00FF88" fill-opacity="0.3" stroke="#00FF88" stroke-width="1" rx="5" />
+    
+    <!-- Mock content blocks -->
+    <rect x="70" y="200" width="320" height="80" fill="#00FFFF" fill-opacity="0.1" stroke="#00FFFF" stroke-width="1" rx="5" />
+    <rect x="410" y="200" width="320" height="80" fill="#FF00FF" fill-opacity="0.1" stroke="#FF00FF" stroke-width="1" rx="5" />
+    <rect x="70" y="300" width="660" height="80" fill="#00FF88" fill-opacity="0.1" stroke="#00FF88" stroke-width="1" rx="5" />
+    
+    <!-- Center message -->
+    <text x="400" y="320" text-anchor="middle" 
+          font-family="Courier New, monospace" 
+          font-size="24px" font-weight="bold" 
+          fill="#FFFFFF">
+        {screenshot_type.replace('-', ' ').title()}
+    </text>
+    
+    <text x="400" y="350" text-anchor="middle" 
+          font-family="Courier New, monospace" 
+          font-size="16px" 
+          fill="#00FF88">
+        Screenshot Coming Soon
+    </text>
+    
+    <text x="400" y="380" text-anchor="middle" 
+          font-family="Courier New, monospace" 
+          font-size="12px" 
+          fill="#FFFFFF" opacity="0.7">
+        Enterprise-grade solution in active development
+    </text>
+    
+    <!-- Footer -->
+    <rect x="50" y="550" width="700" height="30" fill="#1A1A2E" stroke="#00FFFF" stroke-width="1" rx="5" />
+    <text x="400" y="570" text-anchor="middle" 
+          font-family="Courier New, monospace" 
+          font-size="12px" 
+          fill="#00FFFF">
+        Tiation Ecosystem • Professional • Scalable • Mission-Driven
+    </text>
+</svg>'''
+    
+    # Create placeholder screenshots for key repositories
+    key_repos = list(ARCHITECTURE_CONFIGS.keys())
+    
+    screenshot_count = 0
+    
+    for repo_name in key_repos:
+        repo_path = base_path / repo_name
         
-        # Get component style
-        comp_type = comp['type']
-        style = COMPONENT_STYLES.get(comp_type, COMPONENT_STYLES['backend'])
+        if not repo_path.exists():
+            continue
         
-        # Create enhanced component box with gradient effect
-        rect = FancyBboxPatch((x-0.6, y-0.4), 1.2, 0.8, 
-                            boxstyle="round,pad=0.1",
-                            facecolor=style['color'], 
-                            edgecolor=COLORS['white'], 
-                            linewidth=3, alpha=0.9)
-        ax.add_patch(rect)
+        # Create screenshots directory
+        screenshots_dir = repo_path / "assets" / "screenshots"
+        screenshots_dir.mkdir(parents=True, exist_ok=True)
         
-        # Add inner glow effect
-        inner_rect = FancyBboxPatch((x-0.55, y-0.35), 1.1, 0.7, 
-                                  boxstyle="round,pad=0.05",
-                                  facecolor='none', 
-                                  edgecolor=style['color'], 
-                                  linewidth=1, alpha=0.5)
-        ax.add_patch(inner_rect)
+        # Create placeholder files
+        for screenshot_name in ["main-interface", "dashboard"]:
+            svg_path = screenshots_dir / f"{screenshot_name}.svg"
+            svg_content = create_placeholder_svg(repo_name, screenshot_name)
+            with open(svg_path, 'w', encoding='utf-8') as f:
+                f.write(svg_content)
+            screenshot_count += 1
         
-        # Add component label with enhanced styling
-        ax.text(x, y, comp['name'], ha='center', va='center', 
-                fontsize=10, color=COLORS['white'], weight='bold')
-        
-        # Add component type badge
-        ax.text(x, y-0.8, comp_type.replace('_', ' ').title(), 
-                ha='center', va='center', 
-                fontsize=8, color=COLORS['white'], style='italic',
-                bbox=dict(boxstyle="round,pad=0.2", facecolor=COLORS['dark_gray'], 
-                         alpha=0.8, edgecolor=style['color']))
+        print(f"✅ Created placeholder screenshots for {repo_name}")
     
-    # Draw enhanced connections with data flow indicators
-    for conn in architecture['connections']:
-        start_idx, end_idx = conn
-        start_pos = positions[start_idx]
-        end_pos = positions[end_idx]
-        
-        # Draw main arrow
-        ax.annotate('', xy=end_pos, xytext=start_pos,
-                   arrowprops=dict(arrowstyle='->', color=COLORS['cyan_primary'],
-                                 lw=3, alpha=0.8))
-        
-        # Add data flow indicator
-        mid_x = (start_pos[0] + end_pos[0]) / 2
-        mid_y = (start_pos[1] + end_pos[1]) / 2
-        ax.plot(mid_x, mid_y, 'o', color=COLORS['neon_pink'], markersize=4, alpha=0.7)
-    
-    # Add enhanced title with subtitle
-    title = f"{repo_name.replace('-', ' ').title()}"
-    subtitle = f"Enterprise Architecture - {architecture['type'].replace('_', ' ').title()}"
-    
-    ax.text(4, 7.5, title, ha='center', va='center', 
-            fontsize=20, color=COLORS['cyan_primary'], weight='bold')
-    ax.text(4, 7.2, subtitle, ha='center', va='center', 
-            fontsize=14, color=COLORS['white'], style='italic')
-    
-    # Add architectural layers
-    layers = ['Presentation Layer', 'Business Logic Layer', 'Data Layer', 'Infrastructure Layer']
-    for i, layer in enumerate(layers):
-        y_pos = 6 - i * 1.5
-        ax.axhline(y=y_pos, color=COLORS['gray'], linestyle='--', alpha=0.3, linewidth=1)
-        ax.text(0.2, y_pos + 0.1, layer, ha='left', va='bottom', 
-                fontsize=9, color=COLORS['gray'], style='italic')
-    
-    # Add technology stack info
-    ax.text(7, 1, "Technology Stack:", ha='left', va='top', 
-            fontsize=10, color=COLORS['cyan_primary'], weight='bold')
-    
-    tech_stack = get_tech_stack_for_repo(repo_name)
-    for i, tech in enumerate(tech_stack):
-        ax.text(7, 0.7 - i * 0.2, f"• {tech}", ha='left', va='top', 
-                fontsize=8, color=COLORS['white'])
-    
-    # Save the enhanced diagram
-    plt.tight_layout()
-    plt.savefig(output_path, dpi=300, bbox_inches='tight', 
-                facecolor=COLORS['primary_dark'], edgecolor='none')
-    plt.close()
-    
-    print(f"✅ Created enhanced architecture diagram: {output_path}")
+    print(f"\n📸 Created {screenshot_count} placeholder screenshots successfully!")
 
-def get_tech_stack_for_repo(repo_name: str) -> List[str]:
-    """Get technology stack for a repository"""
+def main():
+    """Main function"""
+    print("🎨 Tiation Architecture Diagram & Screenshot Generator")
+    print("=" * 60)
     
-    tech_stacks = {
-        'tiation-ai-agents': ['React Native', 'Node.js', 'PostgreSQL', 'Redis', 'Docker'],
-        'tiation-cms': ['React', 'Node.js', 'PostgreSQL', 'Redis', 'Docker'],
-        'tiation-docker-debian': ['Docker', 'Debian', 'Kubernetes', 'Shell Scripts'],
-        'liberation-system': ['React', 'TypeScript', 'Node.js', 'Blockchain', 'WebRTC'],
-        'tiation-terminal-workflows': ['Bash', 'Python', 'Node.js', 'Shell Scripts'],
-        'tiation-chase-white-rabbit-ngo': ['Vue.js', 'Node.js', 'PostgreSQL', 'Stripe API']
-    }
+    # Generate architecture diagrams
+    create_architecture_diagrams()
     
-    return tech_stacks.get(repo_name, ['Web Technologies', 'Backend Services', 'Database'])
+    # Create placeholder screenshots
+    create_placeholder_screenshots()
+    
+    print("\n🎯 Architecture and screenshot generation complete!")
+    print("🚀 Ready to enhance your repository documentation!")
 
 if __name__ == "__main__":
-    print("🔮 Tiation Architecture Diagram Generator")
-    print("Generating enterprise-grade architecture diagrams...")
-    
-    try:
-        generate_all_diagrams()
-        print("\n✅ All architecture diagrams generated successfully!")
-        print("📁 Check the .screenshots/ directory in each repository")
-    except Exception as e:
-        print(f"❌ Error generating diagrams: {e}")
-        print("💡 Make sure you have matplotlib installed: pip install matplotlib")
+    main()
