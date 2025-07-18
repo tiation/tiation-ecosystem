@@ -669,7 +669,9 @@
     ],
     "tiation-rigger-infrastructure": [
       "infrastructure",
-      "enterprise"
+      "enterprise",
+      "terraform",
+      "kubernetes"
     ],
     "tiation-ai-agents": [
       "ai",
