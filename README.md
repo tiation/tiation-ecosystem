@@ -61,7 +61,7 @@ All projects implement a consistent **dark neon theme** with:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/tiation-github.git
+git clone https://github.com/tiation/tiation-github.git
 cd tiation-github
 
 # Initialize submodules (if applicable)
@@ -143,8 +143,8 @@ This project is licensed under the MIT License - see individual repositories for
 
 ## 🔗 Links
 
-- [GitHub Organization](https://github.com/yourusername)
-- [Documentation Site](https://yourusername.github.io/tiation-github)
+- [GitHub Organization](https://github.com/tiation)
+- [Documentation Site](https://tiation.github.io/tiation-github)
 - [Enterprise Portal](https://enterprise.tiation.com)
 
 ## 📞 Support
@@ -152,7 +152,7 @@ This project is licensed under the MIT License - see individual repositories for
 For enterprise support and consulting:
 - Email: support@tiation.com
 - Documentation: [Enterprise Support Portal](https://support.tiation.com)
-- Issues: [GitHub Issues](https://github.com/yourusername/tiation-github/issues)
+- Issues: [GitHub Issues](https://github.com/tiation/tiation-github/issues)
 
 ---
 
