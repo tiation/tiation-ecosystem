@@ -4,19 +4,48 @@ Enterprise-grade recruitment platform for the Western Australian construction an
 
 ![Project Status](https://img.shields.io/badge/status-in%20development-blue)
 ![License](https://img.shields.io/badge/license-proprietary-red)
+![WorkSafe WA](https://img.shields.io/badge/compliance-WorkSafe%20WA-green)
+![Mobile Ready](https://img.shields.io/badge/platform-iOS%20%7C%20Android%20%7C%20Web-purple)
+![WCAG 2.1](https://img.shields.io/badge/accessibility-WCAG%202.1-brightgreen)
 
 ## 🏗️ Overview
 
-RiggerHireApp is a comprehensive B2B platform connecting construction and mining businesses with qualified riggers, doggers, and crane operators in Western Australia.
+RiggerHireApp is an enterprise-grade B2B platform revolutionizing recruitment in Western Australia's construction and mining industries. Our platform seamlessly connects businesses with certified riggers, doggers, and crane operators while ensuring strict compliance with WorkSafe WA standards.
+
+## 🎯 Key Benefits
+
+- **Safety First**: Automated WorkSafe WA compliance verification
+- **Efficiency**: AI-powered matching system
+- **Reliability**: Real-time worker availability tracking
+- **Security**: Enterprise-grade data protection
+- **Compliance**: Automated certification verification
+- **Accessibility**: WCAG 2.1 compliant interface
 
 ## 🚀 Features
 
-- Enterprise-grade safety compliance
-- Automated matching system
+### Core Capabilities
+- Enterprise-grade safety compliance system
+- AI-powered worker-job matching
 - Real-time availability tracking
+- Secure payment processing (Stripe & Supabase)
+- Mobile-first responsive design
+- Automated certification verification
+
+### Business Features
+- Comprehensive worker verification
+- Automated compliance checking
+- Real-time availability updates
 - Secure payment processing
-- Mobile-first design
-- Industry-specific certification verification
+- Analytics dashboard
+- Automated reporting
+
+### Worker Features
+- Digital certification management
+- Real-time job notifications
+- Secure document storage
+- Payment tracking
+- Professional profile builder
+- Skills verification
 
 ## 🏢 Repository Structure
 
