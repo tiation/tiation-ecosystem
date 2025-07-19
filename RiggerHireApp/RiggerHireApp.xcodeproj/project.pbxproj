@@ -19,6 +19,8 @@
 		01234567890ABCDEF1234579 /* JobFiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01234567890ABCDEF123457A /* JobFiltersView.swift */; };
 		01234567890ABCDEF123457B /* JobDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01234567890ABCDEF123457C /* JobDetailView.swift */; };
 		01234567890ABCDEF123457D /* MyJobsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01234567890ABCDEF123457E /* MyJobsView.swift */; };
+		01234567890ABCDEF123457F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01234567890ABCDEF1234580 /* ProfileView.swift */; };
+		01234567890ABCDEF1234581 /* PaymentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01234567890ABCDEF1234582 /* PaymentsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		01234567890ABCDEF123457A /* JobFiltersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobFiltersView.swift; sourceTree = "<group>"; };
 		01234567890ABCDEF123457C /* JobDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailView.swift; sourceTree = "<group>"; };
 		01234567890ABCDEF123457E /* MyJobsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyJobsView.swift; sourceTree = "<group>"; };
+		01234567890ABCDEF1234580 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		01234567890ABCDEF1234582 /* PaymentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsView.swift; sourceTree = "<group>"; };
 		01234567890ABCDEF123457F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,9 +58,9 @@
 			children = (
 				01234567890ABCDEF1234568 /* RiggerHireApp.swift */,
 				01234567890ABCDEF123456A /* ContentView.swift */,
-				01234567890ABCDEF1234580 /* Models */,
-				01234567890ABCDEF1234581 /* Services */,
-				01234567890ABCDEF1234582 /* Views */,
+				01234567890ABCDEF1234583 /* Models */,
+				01234567890ABCDEF1234584 /* Services */,
+				01234567890ABCDEF1234585 /* Views */,
 				01234567890ABCDEF123457F /* Info.plist */,
 			);
 			path = RiggerHireApp;
@@ -78,7 +82,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		01234567890ABCDEF1234580 /* Models */ = {
+		01234567890ABCDEF1234583 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				01234567890ABCDEF123456C /* Job.swift */,
@@ -87,7 +91,7 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		01234567890ABCDEF1234581 /* Services */ = {
+		01234567890ABCDEF1234584 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				01234567890ABCDEF1234570 /* AuthenticationManager.swift */,
@@ -97,7 +101,7 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		01234567890ABCDEF1234582 /* Views */ = {
+		01234567890ABCDEF1234585 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				01234567890ABCDEF1234576 /* LoginView.swift */,
@@ -105,6 +109,8 @@
 				01234567890ABCDEF123457A /* JobFiltersView.swift */,
 				01234567890ABCDEF123457C /* JobDetailView.swift */,
 				01234567890ABCDEF123457E /* MyJobsView.swift */,
+				01234567890ABCDEF1234580 /* ProfileView.swift */,
+				01234567890ABCDEF1234582 /* PaymentsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -188,6 +194,8 @@
 				01234567890ABCDEF1234579 /* JobFiltersView.swift in Sources */,
 				01234567890ABCDEF123457B /* JobDetailView.swift in Sources */,
 				01234567890ABCDEF123457D /* MyJobsView.swift in Sources */,
+				01234567890ABCDEF123457F /* ProfileView.swift in Sources */,
+				01234567890ABCDEF1234581 /* PaymentsView.swift in Sources */,
 				01234567890ABCDEF1234567 /* RiggerHireApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
