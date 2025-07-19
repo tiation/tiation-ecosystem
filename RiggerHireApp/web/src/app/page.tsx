@@ -1,9 +1,33 @@
-import Image from "next/image";
+'use client';
+
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { useAuth } from '@/contexts/AuthContext';
 
 export default function Home() {
+  const { isAuthenticated, isLoading } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!isLoading) {
+      if (isAuthenticated) {
+        router.push('/dashboard');
+      } else {
+        router.push('/auth');
+      }
+    }
+  }, [isAuthenticated, isLoading, router]);
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-backgroundPrimary to-backgroundSecondary">
+        <div className="text-textPrimary">Loading...</div>
+      </div>
+    );
+  }
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-backgroundPrimary to-backgroundSecondary p-8">
+      <main className="w-full max-w-4xl">
         <Image
           className="dark:invert"
           src="/next.svg"

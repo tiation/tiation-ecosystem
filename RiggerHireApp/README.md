@@ -73,7 +73,24 @@ RiggerHireApp/
 
 ## 📱 Screenshots
 
-[Coming Soon]
+### Mobile-Responsive Design
+
+Our enterprise-grade platform features a dark neon theme with cyan/magenta gradients, optimized for all screen sizes:
+
+#### Business Dashboard
+![Business Dashboard - Mobile](./screenshots/responsive/business-dashboard-mobile.png)
+![Business Dashboard - Tablet](./screenshots/responsive/business-dashboard-tablet.png)
+![Business Dashboard - Desktop](./screenshots/responsive/business-dashboard-desktop.png)
+
+#### Worker Profile
+![Worker Profile - Mobile](./screenshots/responsive/worker-profile-mobile.png)
+![Worker Profile - Tablet](./screenshots/responsive/worker-profile-tablet.png)
+![Worker Profile - Desktop](./screenshots/responsive/worker-profile-desktop.png)
+
+#### Job Listings
+![Job Listings - Mobile](./screenshots/responsive/job-listings-mobile.png)
+![Job Listings - Tablet](./screenshots/responsive/job-listings-tablet.png)
+![Job Listings - Desktop](./screenshots/responsive/job-listings-desktop.png)
 
 ## 🔧 Development Setup
 
