@@ -70,7 +70,7 @@ class ARViewController: UIViewController, ARSessionDelegate {
     }
     
     private func setupHeaderView() {
-        let headerContainer = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 110))
+        let headerContainer = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 130))
         headerContainer.backgroundColor = UIColor.black.withAlphaComponent(0.85)
         
         // Add gradient overlay
@@ -80,13 +80,13 @@ class ARViewController: UIViewController, ARSessionDelegate {
         gradientLayer.locations = [0.7, 1.0]
         headerContainer.layer.addSublayer(gradientLayer)
         
-        // Enterprise logo/title
-        let logoContainer = UIView(frame: CGRect(x: 20, y: 50, width: view.bounds.width - 40, height: 50))
+        // Enterprise logo/title with better spacing
+        let logoContainer = UIView(frame: CGRect(x: 20, y: 60, width: view.bounds.width - 40, height: 60))
         
-        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: logoContainer.bounds.width, height: 28))
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: logoContainer.bounds.width, height: 32))
         titleLabel.text = "ENTERPRISE AR VISUALIZER"
         titleLabel.textColor = UIColor.cyan
-        titleLabel.font = UIFont(name: "Menlo-Bold", size: 18) ?? UIFont.boldSystemFont(ofSize: 18)
+        titleLabel.font = UIFont(name: "Menlo-Bold", size: 20) ?? UIFont.boldSystemFont(ofSize: 20)
         titleLabel.textAlignment = .center
         titleLabel.layer.shadowColor = UIColor.cyan.cgColor
         titleLabel.layer.shadowRadius = 4
@@ -94,27 +94,27 @@ class ARViewController: UIViewController, ARSessionDelegate {
         titleLabel.layer.shadowOffset = CGSize(width: 0, height: 0)
         logoContainer.addSubview(titleLabel)
         
-        let subtitleLabel = UILabel(frame: CGRect(x: 0, y: 26, width: logoContainer.bounds.width, height: 18))
+        let subtitleLabel = UILabel(frame: CGRect(x: 0, y: 35, width: logoContainer.bounds.width, height: 22))
         subtitleLabel.text = "Advanced Industrial Visualization Platform"
         subtitleLabel.textColor = UIColor.white.withAlphaComponent(0.7)
-        subtitleLabel.font = UIFont(name: "Menlo", size: 12) ?? UIFont.systemFont(ofSize: 12)
+        subtitleLabel.font = UIFont(name: "Menlo", size: 14) ?? UIFont.systemFont(ofSize: 14)
         subtitleLabel.textAlignment = .center
         logoContainer.addSubview(subtitleLabel)
         
         headerContainer.addSubview(logoContainer)
         view.addSubview(headerContainer)
         
-        // AR Session Status
-        sessionStatusLabel = UILabel(frame: CGRect(x: view.bounds.width - 120, y: 55, width: 100, height: 20))
+        // AR Session Status - moved to avoid overlap
+        sessionStatusLabel = UILabel(frame: CGRect(x: view.bounds.width - 140, y: 65, width: 120, height: 25))
         sessionStatusLabel.text = "⚫ INITIALIZING"
         sessionStatusLabel.textColor = .orange
-        sessionStatusLabel.font = UIFont(name: "Menlo-Bold", size: 10) ?? UIFont.boldSystemFont(ofSize: 10)
+        sessionStatusLabel.font = UIFont(name: "Menlo-Bold", size: 12) ?? UIFont.boldSystemFont(ofSize: 12)
         sessionStatusLabel.textAlignment = .right
         headerContainer.addSubview(sessionStatusLabel)
     }
     
     private func setupStatusHUD() {
-        statusHUD = UIView(frame: CGRect(x: 20, y: 130, width: 200, height: 80))
+        statusHUD = UIView(frame: CGRect(x: 20, y: 150, width: 220, height: 100))
         statusHUD.backgroundColor = UIColor.black.withAlphaComponent(0.8)
         statusHUD.layer.cornerRadius = 12
         statusHUD.layer.borderWidth = 1
@@ -127,28 +127,28 @@ class ARViewController: UIViewController, ARSessionDelegate {
         statusHUD.layer.shadowOpacity = 0.3
         statusHUD.layer.shadowOffset = CGSize(width: 0, height: 0)
         
-        let statusTitle = UILabel(frame: CGRect(x: 15, y: 10, width: 170, height: 16))
+        let statusTitle = UILabel(frame: CGRect(x: 15, y: 12, width: 190, height: 20))
         statusTitle.text = "SYSTEM STATUS"
         statusTitle.textColor = .cyan
-        statusTitle.font = UIFont(name: "Menlo-Bold", size: 11) ?? UIFont.boldSystemFont(ofSize: 11)
+        statusTitle.font = UIFont(name: "Menlo-Bold", size: 13) ?? UIFont.boldSystemFont(ofSize: 13)
         statusHUD.addSubview(statusTitle)
         
-        let trackingLabel = UILabel(frame: CGRect(x: 15, y: 30, width: 170, height: 14))
+        let trackingLabel = UILabel(frame: CGRect(x: 15, y: 35, width: 190, height: 18))
         trackingLabel.text = "🎯 Tracking: Normal"
         trackingLabel.textColor = .white
-        trackingLabel.font = UIFont(name: "Menlo", size: 10) ?? UIFont.systemFont(ofSize: 10)
+        trackingLabel.font = UIFont(name: "Menlo", size: 12) ?? UIFont.systemFont(ofSize: 12)
         statusHUD.addSubview(trackingLabel)
         
-        let anchorsLabel = UILabel(frame: CGRect(x: 15, y: 46, width: 170, height: 14))
+        let anchorsLabel = UILabel(frame: CGRect(x: 15, y: 55, width: 190, height: 18))
         anchorsLabel.text = "⚓ Anchors: 0 detected"
         anchorsLabel.textColor = .white
-        anchorsLabel.font = UIFont(name: "Menlo", size: 10) ?? UIFont.systemFont(ofSize: 10)
+        anchorsLabel.font = UIFont(name: "Menlo", size: 12) ?? UIFont.systemFont(ofSize: 12)
         statusHUD.addSubview(anchorsLabel)
         
-        let fpsLabel = UILabel(frame: CGRect(x: 15, y: 62, width: 170, height: 14))
+        let fpsLabel = UILabel(frame: CGRect(x: 15, y: 75, width: 190, height: 18))
         fpsLabel.text = "📊 Rendering: 60 FPS"
         fpsLabel.textColor = .white
-        fpsLabel.font = UIFont(name: "Menlo", size: 10) ?? UIFont.systemFont(ofSize: 10)
+        fpsLabel.font = UIFont(name: "Menlo", size: 12) ?? UIFont.systemFont(ofSize: 12)
         statusHUD.addSubview(fpsLabel)
         
         view.addSubview(statusHUD)
@@ -203,7 +203,7 @@ class ARViewController: UIViewController, ARSessionDelegate {
     }
     
     private func setupMetricsView() {
-        metricsView = UIView(frame: CGRect(x: view.bounds.width - 150, y: 130, width: 130, height: 100))
+        metricsView = UIView(frame: CGRect(x: view.bounds.width - 170, y: 150, width: 150, height: 120))
         metricsView.backgroundColor = UIColor.black.withAlphaComponent(0.8)
         metricsView.layer.cornerRadius = 12
         metricsView.layer.borderWidth = 1
@@ -216,34 +216,34 @@ class ARViewController: UIViewController, ARSessionDelegate {
         metricsView.layer.shadowOpacity = 0.3
         metricsView.layer.shadowOffset = CGSize(width: 0, height: 0)
         
-        let metricsTitle = UILabel(frame: CGRect(x: 10, y: 8, width: 110, height: 16))
+        let metricsTitle = UILabel(frame: CGRect(x: 12, y: 10, width: 126, height: 20))
         metricsTitle.text = "PERFORMANCE"
         metricsTitle.textColor = .magenta
-        metricsTitle.font = UIFont(name: "Menlo-Bold", size: 10) ?? UIFont.boldSystemFont(ofSize: 10)
+        metricsTitle.font = UIFont(name: "Menlo-Bold", size: 12) ?? UIFont.boldSystemFont(ofSize: 12)
         metricsView.addSubview(metricsTitle)
         
-        let cpuLabel = UILabel(frame: CGRect(x: 10, y: 28, width: 110, height: 12))
+        let cpuLabel = UILabel(frame: CGRect(x: 12, y: 33, width: 126, height: 16))
         cpuLabel.text = "CPU: 23%"
         cpuLabel.textColor = .white
-        cpuLabel.font = UIFont(name: "Menlo", size: 9) ?? UIFont.systemFont(ofSize: 9)
+        cpuLabel.font = UIFont(name: "Menlo", size: 11) ?? UIFont.systemFont(ofSize: 11)
         metricsView.addSubview(cpuLabel)
         
-        let memLabel = UILabel(frame: CGRect(x: 10, y: 44, width: 110, height: 12))
+        let memLabel = UILabel(frame: CGRect(x: 12, y: 52, width: 126, height: 16))
         memLabel.text = "Memory: 156MB"
         memLabel.textColor = .white
-        memLabel.font = UIFont(name: "Menlo", size: 9) ?? UIFont.systemFont(ofSize: 9)
+        memLabel.font = UIFont(name: "Menlo", size: 11) ?? UIFont.systemFont(ofSize: 11)
         metricsView.addSubview(memLabel)
         
-        let thermalLabel = UILabel(frame: CGRect(x: 10, y: 60, width: 110, height: 12))
+        let thermalLabel = UILabel(frame: CGRect(x: 12, y: 71, width: 126, height: 16))
         thermalLabel.text = "Thermal: Normal"
         thermalLabel.textColor = .green
-        thermalLabel.font = UIFont(name: "Menlo", size: 9) ?? UIFont.systemFont(ofSize: 9)
+        thermalLabel.font = UIFont(name: "Menlo", size: 11) ?? UIFont.systemFont(ofSize: 11)
         metricsView.addSubview(thermalLabel)
         
-        let batteryLabel = UILabel(frame: CGRect(x: 10, y: 76, width: 110, height: 12))
+        let batteryLabel = UILabel(frame: CGRect(x: 12, y: 90, width: 126, height: 16))
         batteryLabel.text = "Battery: 87%"
         batteryLabel.textColor = .green
-        batteryLabel.font = UIFont(name: "Menlo", size: 9) ?? UIFont.systemFont(ofSize: 9)
+        batteryLabel.font = UIFont(name: "Menlo", size: 11) ?? UIFont.systemFont(ofSize: 11)
         metricsView.addSubview(batteryLabel)
         
         view.addSubview(metricsView)
@@ -281,21 +281,22 @@ class ARViewController: UIViewController, ARSessionDelegate {
     }
     
     private func createModernMenuButton(icon: String, title: String, yPosition: Int) -> UIButton {
-        let button = UIButton(frame: CGRect(x: 15, y: yPosition, width: 200, height: 40))
+        let button = UIButton(frame: CGRect(x: 15, y: yPosition, width: 200, height: 45))
         button.backgroundColor = UIColor.cyan.withAlphaComponent(0.1)
         button.layer.cornerRadius = 8
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor.cyan.withAlphaComponent(0.3).cgColor
         
-        let iconLabel = UILabel(frame: CGRect(x: 15, y: 12, width: 20, height: 16))
+        let iconLabel = UILabel(frame: CGRect(x: 15, y: 12, width: 25, height: 20))
         iconLabel.text = icon
-        iconLabel.font = UIFont.systemFont(ofSize: 14)
+        iconLabel.font = UIFont.systemFont(ofSize: 16)
+        iconLabel.textAlignment = .center
         button.addSubview(iconLabel)
         
-        let titleLabel = UILabel(frame: CGRect(x: 45, y: 12, width: 140, height: 16))
+        let titleLabel = UILabel(frame: CGRect(x: 50, y: 12, width: 140, height: 20))
         titleLabel.text = title
         titleLabel.textColor = .cyan
-        titleLabel.font = UIFont(name: "Menlo-Bold", size: 11) ?? UIFont.boldSystemFont(ofSize: 11)
+        titleLabel.font = UIFont(name: "Menlo-Bold", size: 13) ?? UIFont.boldSystemFont(ofSize: 13)
         button.addSubview(titleLabel)
         
         return button
