@@ -161,15 +161,19 @@ router.post('/login', signInValidation, handleValidationErrors, asyncHandler(asy
     const twoFactorToken = user.generateTwoFactorVerificationToken();
     await user.save();
     
-    // TODO: Send 2FA token via SMS/Email
-    // await sendTwoFactorToken(user.phoneNumber, user.email, twoFactorToken);
+    // Send 2FA token via Email
+    await sendEmail({
+      email: user.email,
+      subject: 'RiggerHireApp - Two-Factor Authentication Token',
+      message: `Your verification code: ${twoFactorToken}`
+    });
     
     return res.json({
       success: true,
       message: 'Two-factor authentication required',
       requiresTwoFactorAuth: true,
       userId: user._id, // Temporary ID for 2FA verification
-      twoFactorMethod: 'sms_email' // Could be 'totp', 'sms', 'email'
+      twoFactorMethod: 'email'
     });
   }
 
@@ -187,6 +191,129 @@ router.post('/login', signInValidation, handleValidationErrors, asyncHandler(asy
     refreshToken,
     user: user.toJSON(),
     requiresTwoFactorAuth: false
+  });
+}));
+
+// @route   POST /api/auth/verify-2fa
+// @desc    Verify two-factor authentication token
+// @access  Public
+router.post('/verify-2fa', asyncHandler(async (req, res) => {
+  const { userId, token } = req.body;
+
+  const user = await User.findById(userId);
+  if (!user || !user.verify2FAToken(token)) {
+    throw new AppError('Invalid or expired 2FA token', 401, '2FA Verification Failed');
+  }
+
+  user.twoFactorVerified = true;
+  user.lastLogin = new Date();
+  await user.save();
+
+  const { accessToken, refreshToken } = generateTokens(user._id);
+
+  res.json({
+    success: true,
+    message: 'Two-factor authentication verified',
+    accessToken,
+    refreshToken
+  });
+}));
+
+// @route   POST /api/auth/reset-password
+// @desc    Reset password with token
+// @access  Public
+router.post('/reset-password', resetPasswordValidation, handleValidationErrors, asyncHandler(async (req, res) => {
+  const { token, newPassword } = req.body;
+
+  // Hash the token to compare with stored version
+  const hashedToken = crypto
+    .createHash('sha256')
+    .update(token)
+    .digest('hex');
+
+  const user = await User.findOne({
+    passwordResetToken: hashedToken,
+    passwordResetExpires: { $gt: Date.now() }
+  });
+
+  if (!user) {
+    throw new AppError('Token is invalid or has expired', 400, 'Invalid Token');
+  }
+
+  // Update password
+  user.password = newPassword;
+  user.passwordResetToken = undefined;
+  user.passwordResetExpires = undefined;
+  await user.save();
+
+  res.json({
+    success: true,
+    message: 'Password has been reset successfully'
+  });
+}));
+
+// @route   POST /api/auth/request-reset-password
+// @desc    Request password reset link
+// @access  Public
+router.post('/request-reset-password', forgotPasswordValidation, handleValidationErrors, asyncHandler(async (req, res) => {
+  const { email } = req.body;
+
+  const user = await User.findOne({ email });
+  if (!user) {
+    // Don't reveal if email exists or not for security
+    return res.json({
+      success: true,
+      message: 'If the email exists, a password reset link has been sent'
+    });
+  }
+
+  // Generate reset token
+  const resetToken = user.generatePasswordResetToken();
+  await user.save();
+
+  // Send reset email
+  await sendEmail({
+    email: user.email,
+    subject: 'RiggerHireApp - Password Reset',
+    message: `Reset your password with the following token: ${resetToken}`
+  });
+
+  res.json({
+    success: true,
+    message: 'If the email exists, a password reset link has been sent'
+  });
+}));
+
+// @route   POST /api/auth/reset-password
+// @desc    Reset password with token
+// @access  Public
+router.post('/reset-password', resetPasswordValidation, handleValidationErrors, asyncHandler(async (req, res) => {
+  const { token, newPassword } = req.body;
+
+  // Hash the token to compare with stored version
+  const hashedToken = crypto
+    .createHash('sha256')
+    .update(token)
+    .digest('hex');
+
+  const user = await User.findOne({
+    passwordResetToken: hashedToken,
+    passwordResetExpires: { $gt: Date.now() }
+  });
+
+  if (!user) {
+    throw new AppError('Token is invalid or has expired', 400, 'Invalid Token');
+  }
+
+  // Update password
+  user.password = newPassword;
+  user.passwordResetToken = undefined;
+  user.passwordResetExpires = undefined;
+  await user.save();
+
+  res.json({
+    success: true,
+    message: 'Password has been reset successfully'
   });
 }));
 

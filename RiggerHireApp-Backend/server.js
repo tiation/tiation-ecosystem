@@ -3,6 +3,11 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
+const { sessionConfig } = require('./config/session');
+const mongoSanitize = require('express-mongo-sanitize');
+const xss = require('xss-clean');
+const hpp = require('hpp');
+const session = require('express-session');
 require('dotenv').config();
 
 // Import routes
@@ -12,17 +17,31 @@ const jobRoutes = require('./routes/jobs');
 const applicationRoutes = require('./routes/applications');
 const paymentRoutes = require('./routes/payments');
 const agentRoutes = require('./routes/agents');
+const worksafeRoutes = require('./routes/worksafe');
 // const contactRoutes = require('./routes/contact');
 
 // Import middleware
 const { errorHandler } = require('./middleware/errorHandler');
 const logger = require('./middleware/logger');
+const setupSecurity = require('./middleware/security');
+const { protect } = require('./middleware/auth');
+const { verifyEmail } = require('./middleware/emailVerification');
+const { forgotPassword, resetPassword } = require('./middleware/passwordReset');
+const { setup2FA, verify2FASetup, verify2FAToken, disable2FA } = require('./middleware/twoFactor');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Security middleware
-app.use(helmet());
+// Apply security middleware
+setupSecurity(app);
+
+// Apply session management
+app.use(session(sessionConfig));
+
+// Data sanitization
+app.use(mongoSanitize()); // Against NoSQL query injection
+app.use(xss()); // Against XSS
+app.use(hpp()); // Prevent parameter pollution
 
 // Rate limiting
 const limiter = rateLimit({
@@ -75,12 +94,27 @@ app.get('/health', (req, res) => {
 });
 
 // API routes
+// Auth routes - no protection needed
 app.use('/api/auth', authRoutes);
-app.use('/api/users', userRoutes);
-app.use('/api/jobs', jobRoutes);
-app.use('/api/applications', applicationRoutes);
-app.use('/api/payments', paymentRoutes);
-app.use('/api/agents', agentRoutes);
+
+// Email verification routes
+app.get('/api/verify-email/:token', verifyEmail);
+app.post('/api/forgot-password', forgotPassword);
+app.patch('/api/reset-password/:token', resetPassword);
+
+// 2FA routes
+app.post('/api/2fa/setup', protect, setup2FA);
+app.post('/api/2fa/verify-setup', protect, verify2FASetup);
+app.post('/api/2fa/verify', protect, verify2FAToken);
+app.delete('/api/2fa/disable', protect, disable2FA);
+
+// Protected routes
+app.use('/api/users', protect, userRoutes);
+app.use('/api/jobs', protect, jobRoutes);
+app.use('/api/applications', protect, applicationRoutes);
+app.use('/api/payments', protect, paymentRoutes);
+app.use('/api/agents', protect, agentRoutes);
+app.use('/api/worksafe', protect, worksafeRoutes);
 // app.use('/api/contact', contactRoutes);
 
 // API documentation route
@@ -95,6 +129,7 @@ app.get('/api', (req, res) => {
       applications: '/api/applications',
       payments: '/api/payments',
       contact: '/api/contact',
+      worksafe: '/api/worksafe',
       health: '/health'
     }
   });
@@ -122,10 +157,7 @@ app.use((req, res) => {
 });
 
 // Database connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/riggerhire', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/riggerhire')
 .then(() => {
   console.log('Connected to MongoDB');
   
