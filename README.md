@@ -26,118 +26,113 @@ This workspace contains enterprise-grade tools, templates, and automation script
 - 🔄 **Consolidated architecture** for maximum efficiency
 - 🧠 **Integrated knowledge platform** for information management
 
-## 📁 Consolidated Directory Structure
+## 📁 Enterprise Directory Structure
 
 ```
 tiation-github/
-├── 📁 infrastructure/         # ALL infrastructure & automation
-│   ├── 📁 automation-server/ # Enterprise automation services
-│   ├── 📁 monitoring/        # Metrics & dashboards
-│   ├── 📁 knowledge-platform/# Integrated knowledge management
-│   ├── 📁 core/              # Core infrastructure configs
-│   ├── 📁 network/           # Network tools & configs
-│   ├── 📁 deployment/        # Deployment configurations
-│   ├── 📁 docker/            # Docker configurations
-│   └── 📁 monitoring/        # Monitoring tools
-├── 📁 templates/             # ALL reusable templates
-│   ├── 📁 branding/         # Brand templates & assets
-│   ├── 📁 repositories/     # Repository templates
-│   ├── 📁 config/           # Configuration templates
-│   ├── 📁 documentation/    # Documentation templates
-│   ├── 📁 web/              # Web templates
-│   └── 📁 workflows/        # GitHub Actions workflows
-├── 📁 documentation/        # ALL project documentation
-│   ├── 📁 central-hub/      # Main documentation hub
-│   ├── 📁 knowledge-hub/    # Knowledge platform docs
-│   ├── 📁 architecture/     # Architecture diagrams & docs
-│   ├── 📁 guides/           # Step-by-step guides
-│   ├── 📁 reports/          # Status and analysis reports
-│   └── 📁 api/              # API documentation
-├── 📁 assets/               # ALL static assets
-│   ├── 📁 diagrams/         # Generated architecture diagrams
-│   ├── 📁 branding/         # Brand assets & logos
-│   ├── 📁 images/           # Screenshots and images
-│   └── 📁 svg/              # SVG files and diagrams
-├── 📁 tools/                # ALL development tools
-│   ├── 📁 git/              # Git workspace management
-│   ├── 📁 development/      # Development utilities
-│   ├── 📁 network/          # Network utilities
-│   ├── 📁 configuration/    # Configuration management
-│   └── 📁 utilities/        # General utilities
-├── 📁 automation/           # ALL automation scripts
-│   ├── 📁 python/          # Python automation scripts
-│   ├── 📁 shell/           # Shell scripts (consolidated)
-│   └── 📁 workflows/       # GitHub Actions workflows
-├── 📁 archive/             # Archived/deprecated files
-└── 📁 [tiation-projects]  # Individual tiation projects
+├── 📁 enterprise-core/          # 🏢 ENTERPRISE CORE FOUNDATION
+│   ├── 📁 automation/          # Enterprise automation services
+│   │   └── 📁 AutomationServer/ # Core automation platform
+│   │       ├── 📁 Services/     # MatchingEngine, DocumentProcessor, etc.
+│   │       └── 📁 Monitoring/   # Security, DisasterRecovery
+│   ├── 📁 infrastructure/       # Core infrastructure components
+│   │   └── 📁 Infrastructure/   # CI-CD, Documentation, Architecture
+│   ├── 📁 monitoring/          # System monitoring and metrics
+│   │   └── 📁 MetricsDashboard/ # BusinessMetrics, AutomationMetrics
+│   ├── 📁 templates/           # Enterprise templates and standards
+│   │   ├── 📁 branding/        # Brand templates & assets
+│   │   ├── 📁 repositories/    # Repository templates
+│   │   ├── 📁 configuration/   # Configuration templates
+│   │   ├── 📁 documentation/   # Documentation templates
+│   │   └── 📁 workflows/       # CI/CD workflow templates
+│   ├── 📁 tools/              # Development tools and utilities
+│   │   ├── 📁 development/     # Development utilities
+│   │   ├── 📁 git/            # Git workspace management
+│   │   ├── 📁 network/        # Network utilities
+│   │   └── 📁 utilities/      # General utilities
+│   ├── 📁 documentation/       # Centralized documentation
+│   │   ├── 📁 guides/         # Step-by-step guides
+│   │   ├── 📁 reports/        # Status and analysis reports
+│   │   ├── 📁 architecture/   # Architecture documentation
+│   │   └── 📁 api/            # API documentation
+│   └── 📁 assets/             # Shared assets and branding
+│       ├── 📁 branding/       # Brand assets & logos
+│       ├── 📁 diagrams/       # Architecture diagrams
+│       ├── 📁 images/         # Screenshots and media
+│       └── 📁 svg/            # SVG files and graphics
+├── 📁 automation/              # ⚡ QUICK ACCESS automation scripts
+│   ├── 📁 python/             # Python automation scripts
+│   ├── 📁 shell/              # Shell automation scripts
+│   └── 📁 workflows/          # GitHub Actions workflows
+└── 📁 [tiation-projects]/      # Individual tiation project repositories
+    ├── 📁 rigger-ecosystem/    # Rigger platform projects
+    ├── 📁 ai-services/         # AI platform components
+    ├── 📁 www-*               # Website projects
+    └── 📁 [specialized-apps]  # Other specialized applications
 ```
 
 ## 🛠️ Quick Start
 
-### Infrastructure Management
+### Enterprise Core Access
 ```bash
-# Access automation services
-cd infrastructure/automation-server
+# Access enterprise automation services
+cd enterprise-core/automation/AutomationServer
 
 # View monitoring dashboards
-cd infrastructure/monitoring/metrics
+cd enterprise-core/monitoring/MetricsDashboard
 
-# Use knowledge platform
-cd infrastructure/knowledge-platform/tiation-knowledge-hub
+# Use enterprise templates
+cd enterprise-core/templates
 
-# Deploy infrastructure
-cd infrastructure/deployment
+# Access core infrastructure
+cd enterprise-core/infrastructure/Infrastructure
+```
+
+### Quick Automation Access
+```bash
+# Quick access to automation scripts
+cd automation/python    # Python automation
+cd automation/shell     # Shell scripts
+cd automation/workflows # GitHub Actions
+
+# Or access full enterprise automation
+cd enterprise-core/automation/AutomationServer/Services
 ```
 
 ### Template Usage
 ```bash
-# Use branding templates
-cd templates/branding
+# Use enterprise branding templates
+cd enterprise-core/templates/branding
 
 # Create new repository from template
-cd templates/repositories
+cd enterprise-core/templates/repositories
 
 # Apply configuration templates
-cd templates/config
+cd enterprise-core/templates/configuration
 ```
 
 ### Documentation Access
 ```bash
-# Access main documentation hub
-cd documentation/central-hub
+# Access centralized documentation
+cd enterprise-core/documentation/guides
 
-# View knowledge platform docs
-cd documentation/knowledge-hub
+# View architecture documentation
+cd enterprise-core/documentation/architecture
 
-# View architecture diagrams
-cd documentation/architecture
-
-# Follow step-by-step guides
-cd documentation/guides
+# Check status reports
+cd enterprise-core/documentation/reports
 ```
 
-### Tools & Development
+### Development Tools
 ```bash
-# Git workspace management
-cd tools/git
-
 # Development utilities
-cd tools/development
+cd enterprise-core/tools/development
 
-# Network configuration
-cd tools/network
-```
+# Git workspace management
+cd enterprise-core/tools/git
 
-### Automation & Scripts
-```bash
-# Python automation
-cd automation/python
-
-# Shell scripts (consolidated)
-cd automation/shell
-
-# GitHub Actions workflows
-cd automation/workflows
+# Network utilities
+cd enterprise-core/tools/network
 ```
 
 ## 🎨 Theme & Design
