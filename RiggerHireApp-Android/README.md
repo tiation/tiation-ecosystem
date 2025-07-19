@@ -1,18 +1,21 @@
-# RiggerHire Android
+# RiggerHire Android - Enterprise Mobile Platform
 
 <div align="center">
   <img src="assets/logo.png" alt="RiggerHire Logo" width="200">
   
-  # Australia's Premier Rigging Jobs Platform
+  # 🏗️ Australia's Premier Rigging Jobs Platform
   
   [![Android](https://img.shields.io/badge/Android-API%2024+-brightgreen.svg)](https://android-arsenal.com/api?level=24)
   [![Kotlin](https://img.shields.io/badge/Kotlin-1.9.20-blue.svg)](https://kotlinlang.org)
-  [![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-1.5.4-green.svg)](https://developer.android.com/jetpack/compose)
+  [![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-2024.06-green.svg)](https://developer.android.com/jetpack/compose)
   [![Material Design 3](https://img.shields.io/badge/Material%20Design-3.0-purple.svg)](https://material.io/design)
   [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+  [![Feature Parity](https://img.shields.io/badge/iOS%20Parity-47%20Screens-cyan.svg)](https://github.com/tiation/RiggerHireApp)
   [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
   
-  **Connecting certified riggers with mining, construction, and industrial projects across the Pilbara region**
+  **🎯 Comprehensive 47-Screen Android App with Full Feature Parity to iOS**  
+  **💼 Enterprise-Grade • 📱 Mobile-First • 🔐 Industry-Specific Security**  
+  **Connecting certified riggers with mining, construction, and industrial projects across Western Australia**
 </div>
 
 ## 📱 Screenshots
@@ -23,23 +26,55 @@
   <img src="assets/screenshots/profile.png" alt="Profile" width="250">
 </div>
 
-## 🚀 Features
+## 📱 Complete 47-Screen Feature Set
 
-### For Riggers
+### 🎯 **Full iOS Feature Parity Achieved**
+The Android app implements all 47 screens from the iOS version with identical functionality and enterprise-grade quality.
+
+| Category | Screens | Features |
+|----------|---------|----------|
+| **🔐 Authentication** | 5 screens | Login, Register, Forgot Password, Password Reset, Splash |
+| **🎓 Onboarding** | 4 screens | Welcome, Permissions, Skills Setup, Preferences |
+| **💼 Jobs Management** | 8 screens | Browse, Search, Filters, Details, Apply, Saved, Applied, Status |
+| **👤 Profile Management** | 8 screens | View, Edit, Documents, Certifications, Skills, Experience, Portfolio, Reviews |
+| **💳 Payments & Billing** | 6 screens | Overview, History, Billing Info, Subscription, Add/Edit Payment Methods |
+| **📊 Analytics & Insights** | 3 screens | Career Analytics, Earnings Analytics, Application Analytics |
+| **⚙️ Settings & Config** | 6 screens | Overview, Notifications, Privacy, Security, Billing, Account |
+| **🔔 Notifications** | 1 screen | Notification Details |
+| **🆘 Support & Help** | 4 screens | Overview, Contact Support, FAQ, Feedback |
+| **📱 Navigation & Utils** | 2 screens | Main Tab Navigation, Profile Details |
+
+### 🚀 Core Features
+
+#### **For Riggers** 👷‍♂️
 - **🔍 Smart Job Matching** - AI-powered algorithm matches you with relevant jobs based on certifications, location, and experience
 - **📍 GPS-Based Discovery** - Find jobs near your current location with real-time distance calculations
 - **💰 Transparent Pricing** - See hourly rates upfront, no hidden fees
 - **📋 Certification Management** - Upload and verify your rigging certifications digitally
 - **⚡ Instant Notifications** - Get notified immediately when matching jobs are posted
 - **💳 Fast Payment** - Automated payment processing via Stripe upon job completion
+- **📊 Career Analytics** - Track your application success rates, earnings, and career progression
+- **🏆 Skills Portfolio** - Showcase your expertise with verified skills and work history
 
-### For Businesses
+#### **For Businesses** 🏢
 - **✅ Verified Professionals** - All riggers are verified with valid certifications and insurance
 - **🎯 Targeted Posting** - Your jobs reach qualified riggers instantly
 - **📊 Real-time Tracking** - Monitor job progress with GPS tracking and status updates
 - **🔐 Secure Platform** - Enterprise-grade security with JWT authentication
 - **📈 Analytics Dashboard** - Track spending, job completion rates, and rigger performance
 - **🌐 Multi-site Support** - Manage jobs across multiple locations from one account
+- **💼 Applicant Management** - Review, filter, and manage job applications efficiently
+- **📋 Compliance Tracking** - Ensure all workers meet safety and certification requirements
+
+#### **Shared Enterprise Features** ⭐
+- **🌙 Dark Neon Theme** - Eye-catching cyan/magenta gradient design optimized for outdoor visibility
+- **🔐 Biometric Security** - Face ID/Fingerprint authentication for quick, secure access
+- **📱 Offline Functionality** - Core features work without internet connection
+- **🔄 Real-time Sync** - Instant updates across all platforms and devices
+- **📍 Location Services** - GPS tracking, geofencing, and proximity-based job matching
+- **📸 Document Scanning** - Built-in camera integration for certification uploads
+- **💬 In-app Messaging** - Direct communication between riggers and employers
+- **📊 Advanced Analytics** - Comprehensive insights with interactive charts and reports
 
 ## 🛠 Technical Stack
 
