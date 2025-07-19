@@ -111,13 +111,18 @@ const userSchema = new mongoose.Schema({
   passwordResetToken: String,
   passwordResetExpires: Date,
   emailVerificationToken: String,
-  emailVerificationExpires: Date
+  emailVerificationExpires: Date,
+  twoFactorEnabled: { type: Boolean, default: false },
+  twoFactorSecret: String,
+  twoFactorBackupCodes: [String],
+  twoFactorVerificationToken: String,
+  twoFactorVerificationExpires: Date
 }, {
   timestamps: true
 });
 
 // Indexes
-userSchema.index({ email: 1 });
+// Note: email index is automatically created due to unique: true constraint
 userSchema.index({ userType: 1 });
 userSchema.index({ isActive: 1 });
 userSchema.index({ 'riggerProfile.specializations': 1 });
@@ -185,6 +190,78 @@ userSchema.methods.generateEmailVerificationToken = function() {
   return verificationToken;
 };
 
+// Instance method to generate two-factor authentication secret
+userSchema.methods.generateTwoFactorSecret = function() {
+  const crypto = require('crypto');
+  const secret = crypto.randomBytes(16).toString('hex');
+  this.twoFactorSecret = secret;
+  return secret;
+};
+
+// Instance method to generate two-factor backup codes
+userSchema.methods.generateTwoFactorBackupCodes = function() {
+  const crypto = require('crypto');
+  const codes = [];
+  for (let i = 0; i < 10; i++) {
+    codes.push(crypto.randomBytes(4).toString('hex').toUpperCase());
+  }
+  this.twoFactorBackupCodes = codes;
+  return codes;
+};
+
+// Instance method to generate two-factor verification token (for SMS/Email)
+userSchema.methods.generateTwoFactorVerificationToken = function() {
+  const crypto = require('crypto');
+  const token = crypto.randomInt(100000, 999999).toString(); // 6-digit code
+  
+  this.twoFactorVerificationToken = crypto
+    .createHash('sha256')
+    .update(token)
+    .digest('hex');
+  
+  this.twoFactorVerificationExpires = Date.now() + 5 * 60 * 1000; // 5 minutes
+  
+  return token;
+};
+
+// Instance method to verify two-factor code
+userSchema.methods.verifyTwoFactorCode = function(code) {
+  if (!this.twoFactorEnabled) {
+    return false;
+  }
+  
+  // Check backup codes first
+  const backupCodeIndex = this.twoFactorBackupCodes.indexOf(code.toUpperCase());
+  if (backupCodeIndex !== -1) {
+    // Remove used backup code
+    this.twoFactorBackupCodes.splice(backupCodeIndex, 1);
+    return true;
+  }
+  
+  // For TOTP verification (would need speakeasy library in production)
+  // This is a simplified version for demonstration
+  return false;
+};
+
+// Instance method to verify SMS/Email token
+userSchema.methods.verifyTwoFactorToken = function(token) {
+  if (!this.twoFactorVerificationToken || !this.twoFactorVerificationExpires) {
+    return false;
+  }
+  
+  if (Date.now() > this.twoFactorVerificationExpires) {
+    return false;
+  }
+  
+  const crypto = require('crypto');
+  const hashedToken = crypto
+    .createHash('sha256')
+    .update(token)
+    .digest('hex');
+  
+  return hashedToken === this.twoFactorVerificationToken;
+};
+
 // Transform output (remove password from JSON responses)
 userSchema.methods.toJSON = function() {
   const userObject = this.toObject();
@@ -193,6 +270,10 @@ userSchema.methods.toJSON = function() {
   delete userObject.passwordResetExpires;
   delete userObject.emailVerificationToken;
   delete userObject.emailVerificationExpires;
+  delete userObject.twoFactorSecret;
+  delete userObject.twoFactorBackupCodes;
+  delete userObject.twoFactorVerificationToken;
+  delete userObject.twoFactorVerificationExpires;
   return userObject;
 };
 

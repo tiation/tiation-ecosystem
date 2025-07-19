@@ -155,6 +155,24 @@ router.post('/login', signInValidation, handleValidationErrors, asyncHandler(asy
     throw new AppError('Invalid email or password', 401, 'Authentication Failed');
   }
 
+  // Check if two-factor authentication is enabled
+  if (user.twoFactorEnabled) {
+    // Generate 2FA verification token and send via SMS/Email
+    const twoFactorToken = user.generateTwoFactorVerificationToken();
+    await user.save();
+    
+    // TODO: Send 2FA token via SMS/Email
+    // await sendTwoFactorToken(user.phoneNumber, user.email, twoFactorToken);
+    
+    return res.json({
+      success: true,
+      message: 'Two-factor authentication required',
+      requiresTwoFactorAuth: true,
+      userId: user._id, // Temporary ID for 2FA verification
+      twoFactorMethod: 'sms_email' // Could be 'totp', 'sms', 'email'
+    });
+  }
+
   // Update last login
   user.lastLogin = new Date();
   await user.save();

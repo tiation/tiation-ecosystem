@@ -11,6 +11,7 @@ const userRoutes = require('./routes/users');
 const jobRoutes = require('./routes/jobs');
 const applicationRoutes = require('./routes/applications');
 const paymentRoutes = require('./routes/payments');
+const agentRoutes = require('./routes/agents');
 // const contactRoutes = require('./routes/contact');
 
 // Import middleware
@@ -79,6 +80,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/jobs', jobRoutes);
 app.use('/api/applications', applicationRoutes);
 app.use('/api/payments', paymentRoutes);
+app.use('/api/agents', agentRoutes);
 // app.use('/api/contact', contactRoutes);
 
 // API documentation route

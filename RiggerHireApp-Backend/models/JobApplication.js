@@ -72,13 +72,13 @@ const jobApplicationSchema = new mongoose.Schema({
 
 // Indexes
 jobApplicationSchema.index({ jobId: 1, applicantId: 1 }, { unique: true }); // Prevent duplicate applications
-jobApplicationSchema.index({ jobId: 1, status: 1 });
+// Note: { jobId: 1, status: 1 } is redundant with compound index below
 jobApplicationSchema.index({ applicantId: 1, status: 1 });
 jobApplicationSchema.index({ clientId: 1, status: 1 });
 jobApplicationSchema.index({ applicationDate: 1 });
 jobApplicationSchema.index({ isActive: 1 });
 
-// Compound indexes
+// Compound indexes (these provide coverage for simple queries too)
 jobApplicationSchema.index({ jobId: 1, status: 1, applicationDate: 1 });
 jobApplicationSchema.index({ applicantId: 1, applicationDate: -1 });
 
