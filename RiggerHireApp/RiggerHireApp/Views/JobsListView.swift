@@ -38,6 +38,10 @@ struct JobsListView: View {
         return jobs
     }
     
+    var urgentJobsCount: Int {
+        filteredJobs.filter { $0.isUrgent }.count
+    }
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -141,12 +145,11 @@ struct JobsListView: View {
                 
                 Spacer()
                 
-                if let urgentCount = filteredJobs.filter({ $0.isUrgent }).count,
-                   urgentCount > 0 {
+                if urgentJobsCount > 0 {
                     HStack {
                         Image(systemName: "exclamationmark.triangle.fill")
                             .foregroundColor(.orange)
-                        Text("\(urgentCount) urgent")
+                        Text("\(urgentJobsCount) urgent")
                             .foregroundColor(.orange)
                     }
                     .font(.caption)

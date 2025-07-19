@@ -107,6 +107,11 @@ cd enterprise-core/templates/branding
 # Create new repository from template
 cd enterprise-core/templates/repositories
 
+# Use consolidated project templates
+cp -r enterprise-core/templates/react/ ../new-react-project/
+cp -r enterprise-core/templates/svelte/ ../new-svelte-project/
+cp -r enterprise-core/templates/intranet/ ../new-intranet-project/
+
 # Apply configuration templates
 cd enterprise-core/templates/configuration
 ```

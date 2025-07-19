@@ -15,6 +15,9 @@ class AuthenticationManager: ObservableObject {
     private let apiService = APIService()
     private var cancellables = Set<AnyCancellable>()
     
+    // Demo mode for testing without backend
+    private let isDemoMode = true
+    
     init() {
         loadStoredAuthState()
     }
@@ -25,17 +28,36 @@ class AuthenticationManager: ObservableObject {
         isLoading = true
         errorMessage = nil
         
-        do {
-            let request = LoginRequest(email: email, password: password)
-            let response = try await apiService.post("/auth/login", body: request, responseType: LoginResponse.self)
-            
-            if response.requiresTwoFactorAuth {
-                requiresTwoFactorAuth = true
-            } else {
+        // Simulate network delay
+        try? await Task.sleep(nanoseconds: 1_000_000_000)
+        
+        if isDemoMode {
+            // Demo authentication - accept test@example.com or any email with password "password"
+            if email.lowercased() == "test@example.com" || password.lowercased() == "password" {
+                let demoUser = createDemoUser(email: email)
+                let response = LoginResponse(
+                    accessToken: "demo_token_123",
+                    refreshToken: "demo_refresh_token",
+                    user: demoUser,
+                    requiresTwoFactorAuth: false
+                )
                 await handleSuccessfulLogin(response: response)
+            } else {
+                errorMessage = "Invalid email or password. Try test@example.com with any password, or any email with password 'password'."
             }
-        } catch {
-            errorMessage = error.localizedDescription
+        } else {
+            do {
+                let request = LoginRequest(email: email, password: password)
+                let response = try await apiService.post("/auth/login", body: request, responseType: LoginResponse.self)
+                
+                if response.requiresTwoFactorAuth {
+                    requiresTwoFactorAuth = true
+                } else {
+                    await handleSuccessfulLogin(response: response)
+                }
+            } catch {
+                errorMessage = error.localizedDescription
+            }
         }
         
         isLoading = false
@@ -60,18 +82,41 @@ class AuthenticationManager: ObservableObject {
         isLoading = true
         errorMessage = nil
         
-        do {
-            let request = SignUpRequest(
+        // Simulate network delay
+        try? await Task.sleep(nanoseconds: 1_000_000_000)
+        
+        if isDemoMode {
+            // Demo sign up - always succeeds
+            let demoUser = User(
                 firstName: firstName,
                 lastName: lastName,
                 email: email,
-                password: password,
-                userType: userType
+                phoneNumber: "+61 400 123 456",
+                userType: userType,
+                isVerified: false
             )
-            let response = try await apiService.post("/auth/signup", body: request, responseType: LoginResponse.self)
+            
+            let response = LoginResponse(
+                accessToken: "demo_token_123",
+                refreshToken: "demo_refresh_token",
+                user: demoUser,
+                requiresTwoFactorAuth: false
+            )
             await handleSuccessfulLogin(response: response)
-        } catch {
-            errorMessage = error.localizedDescription
+        } else {
+            do {
+                let request = SignUpRequest(
+                    firstName: firstName,
+                    lastName: lastName,
+                    email: email,
+                    password: password,
+                    userType: userType
+                )
+                let response = try await apiService.post("/auth/signup", body: request, responseType: LoginResponse.self)
+                await handleSuccessfulLogin(response: response)
+            } catch {
+                errorMessage = error.localizedDescription
+            }
         }
         
         isLoading = false
@@ -149,13 +194,21 @@ class AuthenticationManager: ObservableObject {
     }
     
     func forgotPassword(email: String) async -> Bool {
-        do {
-            let request = ForgotPasswordRequest(email: email)
-            try await apiService.post("/auth/forgot-password", body: request, responseType: EmptyResponse.self)
+        // Simulate network delay
+        try? await Task.sleep(nanoseconds: 1_000_000_000)
+        
+        if isDemoMode {
+            // Demo forgot password - always succeeds
             return true
-        } catch {
-            errorMessage = error.localizedDescription
-            return false
+        } else {
+            do {
+                let request = ForgotPasswordRequest(email: email)
+                try await apiService.post("/auth/forgot-password", body: request, responseType: EmptyResponse.self)
+                return true
+            } catch {
+                errorMessage = error.localizedDescription
+                return false
+            }
         }
     }
     
@@ -261,12 +314,21 @@ class AuthenticationManager: ObservableObject {
             return
         }
         
-        do {
-            let user = try await apiService.get("/auth/profile", responseType: User.self)
-            currentUser = user
-            isAuthenticated = true
-        } catch {
-            signOut()
+        if isDemoMode {
+            // In demo mode, keep the current user if we have one
+            if currentUser != nil {
+                isAuthenticated = true
+            } else {
+                signOut()
+            }
+        } else {
+            do {
+                let user = try await apiService.get("/auth/profile", responseType: User.self)
+                currentUser = user
+                isAuthenticated = true
+            } catch {
+                signOut()
+            }
         }
     }
     
@@ -277,6 +339,60 @@ class AuthenticationManager: ObservableObject {
                 await self.refreshToken()
             }
         }
+    }
+    
+    private func createDemoUser(email: String) -> User {
+        let riggerProfile = RiggerProfile(
+            specializations: [.craneOperator, .rigger],
+            experienceLevel: .advanced,
+            yearsExperience: 5,
+            certifications: [
+                Certification(
+                    name: "High Risk Work Licence - Crane",
+                    issuingAuthority: "Safe Work Australia",
+                    licenseNumber: "CRN123456",
+                    issueDate: Calendar.current.date(byAdding: .year, value: -2, to: Date()) ?? Date(),
+                    expiryDate: Calendar.current.date(byAdding: .year, value: 1, to: Date()) ?? Date(),
+                    isValid: true
+                )
+            ],
+            availability: Availability(
+                status: .available,
+                startDate: Date(),
+                endDate: nil,
+                preferredShifts: [.dayShift, .swingShift],
+                maximumHoursPerWeek: 50,
+                minimumJobDuration: .daily
+            ),
+            preferredLocations: ["Perth", "Melbourne", "Sydney"],
+            maximumTravelDistance: 100.0,
+            hourlyRate: 65.0,
+            rating: 4.8,
+            completedJobs: 47,
+            insuranceCoverage: 10000000.0,
+            equipmentOwned: ["Personal PPE", "Basic Tools"],
+            safetyRecord: SafetyRecord(
+                incidentFreeHours: 2500,
+                lastIncidentDate: nil,
+                safetyTrainingDate: Calendar.current.date(byAdding: .month, value: -6, to: Date()),
+                safetyRating: .excellent,
+                incidentHistory: []
+            ),
+            languages: ["English"],
+            fifoAvailable: true,
+            nightShiftAvailable: false,
+            emergencyAvailable: true
+        )
+        
+        return User(
+            firstName: "Demo",
+            lastName: "User",
+            email: email,
+            phoneNumber: "+61 400 123 456",
+            userType: .rigger,
+            riggerProfile: riggerProfile,
+            isVerified: true
+        )
     }
 }
 

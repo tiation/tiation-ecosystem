@@ -19,8 +19,8 @@
 		01234567890ABCDEF1234579 /* JobFiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01234567890ABCDEF123457A /* JobFiltersView.swift */; };
 		01234567890ABCDEF123457B /* JobDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01234567890ABCDEF123457C /* JobDetailView.swift */; };
 		01234567890ABCDEF123457D /* MyJobsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01234567890ABCDEF123457E /* MyJobsView.swift */; };
-		01234567890ABCDEF123457F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01234567890ABCDEF1234580 /* ProfileView.swift */; };
-		01234567890ABCDEF1234581 /* PaymentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01234567890ABCDEF1234582 /* PaymentsView.swift */; };
+		01234567890ABCDEF1234586 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01234567890ABCDEF1234587 /* ProfileView.swift */; };
+		01234567890ABCDEF1234588 /* PaymentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01234567890ABCDEF1234589 /* PaymentsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +37,8 @@
 		01234567890ABCDEF123457A /* JobFiltersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobFiltersView.swift; sourceTree = "<group>"; };
 		01234567890ABCDEF123457C /* JobDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailView.swift; sourceTree = "<group>"; };
 		01234567890ABCDEF123457E /* MyJobsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyJobsView.swift; sourceTree = "<group>"; };
-		01234567890ABCDEF1234580 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		01234567890ABCDEF1234582 /* PaymentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsView.swift; sourceTree = "<group>"; };
+		01234567890ABCDEF1234587 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		01234567890ABCDEF1234589 /* PaymentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsView.swift; sourceTree = "<group>"; };
 		01234567890ABCDEF123457F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,8 +109,8 @@
 				01234567890ABCDEF123457A /* JobFiltersView.swift */,
 				01234567890ABCDEF123457C /* JobDetailView.swift */,
 				01234567890ABCDEF123457E /* MyJobsView.swift */,
-				01234567890ABCDEF1234580 /* ProfileView.swift */,
-				01234567890ABCDEF1234582 /* PaymentsView.swift */,
+				01234567890ABCDEF1234587 /* ProfileView.swift */,
+				01234567890ABCDEF1234589 /* PaymentsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -120,7 +120,7 @@
 /* Begin PBXNativeTarget section */
 		01234567890ABCDEF1234564 /* RiggerHireApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 01234567890ABCDEF1234589 /* Build configuration list for PBXNativeTarget "RiggerHireApp" */;
+			buildConfigurationList = 01234567890ABCDEF123458C /* Build configuration list for PBXNativeTarget "RiggerHireApp" */;
 			buildPhases = (
 				01234567890ABCDEF1234561 /* Sources */,
 				01234567890ABCDEF1234562 /* Frameworks */,
@@ -194,8 +194,8 @@
 				01234567890ABCDEF1234579 /* JobFiltersView.swift in Sources */,
 				01234567890ABCDEF123457B /* JobDetailView.swift in Sources */,
 				01234567890ABCDEF123457D /* MyJobsView.swift in Sources */,
-				01234567890ABCDEF123457F /* ProfileView.swift in Sources */,
-				01234567890ABCDEF1234581 /* PaymentsView.swift in Sources */,
+				01234567890ABCDEF1234586 /* ProfileView.swift in Sources */,
+				01234567890ABCDEF1234588 /* PaymentsView.swift in Sources */,
 				01234567890ABCDEF1234567 /* RiggerHireApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,7 +203,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		01234567890ABCDEF1234587 /* Debug */ = {
+		01234567890ABCDEF123458D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -266,7 +266,7 @@
 			};
 			name = Debug;
 		};
-		01234567890ABCDEF1234588 /* Release */ = {
+		01234567890ABCDEF123458E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -386,13 +386,13 @@
 		01234567890ABCDEF1234560 /* Build configuration list for PBXProject "RiggerHireApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				01234567890ABCDEF1234587 /* Debug */,
-				01234567890ABCDEF1234588 /* Release */,
+				01234567890ABCDEF123458D /* Debug */,
+				01234567890ABCDEF123458E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		01234567890ABCDEF1234589 /* Build configuration list for PBXNativeTarget "RiggerHireApp" */ = {
+		01234567890ABCDEF123458C /* Build configuration list for PBXNativeTarget "RiggerHireApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				01234567890ABCDEF123458A /* Debug */,
