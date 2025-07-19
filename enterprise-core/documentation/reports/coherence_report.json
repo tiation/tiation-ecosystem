@@ -1,0 +1,1363 @@
+{
+  "timestamp": "2025-07-18T16:39:29Z",
+  "total_repositories": 94,
+  "branding_score": 90.42553191489363,
+  "branding_passed": 85,
+  "branding_failed": 9,
+  "pinned_repos_status": {
+    "TiaAstor": true,
+    "tiation-chase-white-rabbit-ngo": true,
+    "tiation-rigger-infrastructure": true,
+    "tiation-ai-agents": true,
+    "tiation-cms": true,
+    "tiation-terminal-workflows": true
+  },
+  "cross_references": {
+    "tiation-github": [
+      "TiaAstor",
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-github-pages-theme": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "dontbeacunt": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "dnddiceroller-enhanced": [],
+    "tiation-ai-agents": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-rigger-connect-api": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-automation-workspace": [
+      "TiaAstor",
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-java-sdk": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-cms": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "home": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "mac-zsh-completions": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-go-sdk": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-alma-street-project": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "windows-dev-setup": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-rigger-shared-libraries": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "AutomationServer": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-python-sdk": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "DiceRollerSimulator": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-headless-cms": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "dotfiles": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "dice-roller-marketing-site": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-server-configs-gae": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-docs": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-private-ai-chat": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "temp-github-pages": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "perth-white-glove-magic": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "ubuntu-dev-setup": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "git-workspace": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-terminal-workflows": [
+      "TiaAstor",
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "config": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "spring-up-markers-web": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-vpn-mesh-network": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "architecture-diagrams": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "mark-photo-flare-site": [
+      "TiaAstor",
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-rigger-workspace": [
+      "TiaAstor"
+    ],
+    "RiggerConnectMobileApp": [
+      "TiaAstor",
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "ProtectChildrenAustralia": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "Law": [],
+    "tiation-rigger-automation-server": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "mupan-leopard-wellness-hub": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-react-template": [
+      "TiaAstor",
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-docker-debian": [
+      "TiaAstor",
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "grieftodesign": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-invoice-generator": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "home-safety-matrix-ai": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-knowledge-hub": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-template-repo": [],
+    "my-new-project": [],
+    "tiation-active-directory-setup": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation.github.io": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-rigger-metrics-dashboard": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-economic-reform-proposal": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-company-intranet-template": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-legal-case-studies": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-afl-fantasy-manager-docs": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-infrastructure-charms": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-fantasy-premier-league": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "work-docs": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-knowledge-base-ai": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-rigger-jobs-app": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-wellness-hub": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "dnd_dice_roller": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-rigger-connect-app": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-ai-platform": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "TiaAstor": [
+      "TiaAstor",
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "dnddiceroller-android": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "DnDDiceRoller": [
+      "TiaAstor",
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "scripts": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tough-talk-podcast-chaos": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-ai-code-assistant": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-ansible-enterprise": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "dockerdeb": [
+      "TiaAstor",
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-secure-vpn": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "shattered-realms-nexus": [
+      "TiaAstor",
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "git@github.com!tiation!shattered-realms-nexus.git": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-chase-white-rabbit-ngo": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "website": [
+      "TiaAstor",
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "headscale-admin": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-rigger-mobile-app": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-rigger-infrastructure": [
+      "TiaAstor",
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "MetricsDashboard": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-claude-desktop-linux": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-parrot-security-guide-au": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-m4-project": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "MinutesRecorder": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "Infrastructure": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-js-sdk": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-macos-networking-guide": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-rigger-workspace-docs": [
+      "TiaAstor",
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "tiation-laptop-utilities": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "Parrot-Security-Guide": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ],
+    "liberation-system": [
+      "tiation-chase-white-rabbit-ngo",
+      "tiation-rigger-infrastructure",
+      "tiation-ai-agents",
+      "tiation-cms",
+      "tiation-terminal-workflows"
+    ]
+  },
+  "narrative_coherence": {
+    "TiaAstor": [
+      "technology",
+      "personal"
+    ],
+    "tiation-chase-white-rabbit-ngo": [
+      "change",
+      "ngo",
+      "social"
+    ],
+    "tiation-rigger-infrastructure": [
+      "infrastructure",
+      "enterprise",
+      "terraform",
+      "kubernetes"
+    ],
+    "tiation-ai-agents": [
+      "ai",
+      "automation",
+      "agents",
+      "mobile",
+      "react"
+    ],
+    "tiation-cms": [
+      "cms",
+      "content",
+      "management",
+      "enterprise",
+      "multi"
+    ],
+    "tiation-terminal-workflows": [
+      "terminal",
+      "workflow",
+      "automation",
+      "developer",
+      "warp"
+    ]
+  },
+  "technical_consistency": {
+    "tiation-github": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-github-pages-theme": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "dontbeacunt": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "dnddiceroller-enhanced": [
+      "badges",
+      "license",
+      "contributing"
+    ],
+    "tiation-ai-agents": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-rigger-connect-api": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-automation-workspace": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-java-sdk": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-cms": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "home": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "mac-zsh-completions": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-go-sdk": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-alma-street-project": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "windows-dev-setup": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-rigger-shared-libraries": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "AutomationServer": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-python-sdk": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "DiceRollerSimulator": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-headless-cms": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "dotfiles": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "dice-roller-marketing-site": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-server-configs-gae": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-docs": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-private-ai-chat": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "temp-github-pages": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "perth-white-glove-magic": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "ubuntu-dev-setup": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "git-workspace": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-terminal-workflows": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "config": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "spring-up-markers-web": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-vpn-mesh-network": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "architecture-diagrams": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "mark-photo-flare-site": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-rigger-workspace": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "RiggerConnectMobileApp": [
+      "badges",
+      "license",
+      "documentation"
+    ],
+    "ProtectChildrenAustralia": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "Law": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-rigger-automation-server": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "mupan-leopard-wellness-hub": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-react-template": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-docker-debian": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "grieftodesign": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-invoice-generator": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "home-safety-matrix-ai": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-knowledge-hub": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-template-repo": [
+      "badges",
+      "license",
+      "contributing"
+    ],
+    "my-new-project": [
+      "badges",
+      "license",
+      "contributing"
+    ],
+    "tiation-active-directory-setup": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation.github.io": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-rigger-metrics-dashboard": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-economic-reform-proposal": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-company-intranet-template": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-legal-case-studies": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-afl-fantasy-manager-docs": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-infrastructure-charms": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-fantasy-premier-league": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "work-docs": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-knowledge-base-ai": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-rigger-jobs-app": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-wellness-hub": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "dnd_dice_roller": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-rigger-connect-app": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-ai-platform": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "TiaAstor": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "dnddiceroller-android": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "DnDDiceRoller": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "scripts": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tough-talk-podcast-chaos": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-ai-code-assistant": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-ansible-enterprise": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "dockerdeb": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-secure-vpn": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "shattered-realms-nexus": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "git@github.com!tiation!shattered-realms-nexus.git": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-chase-white-rabbit-ngo": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "website": [
+      "badges",
+      "license",
+      "documentation"
+    ],
+    "headscale-admin": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-rigger-mobile-app": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-rigger-infrastructure": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "MetricsDashboard": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-claude-desktop-linux": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-parrot-security-guide-au": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-m4-project": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "MinutesRecorder": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "Infrastructure": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-js-sdk": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-macos-networking-guide": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-rigger-workspace-docs": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "tiation-laptop-utilities": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "Parrot-Security-Guide": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ],
+    "liberation-system": [
+      "badges",
+      "license",
+      "contributing",
+      "documentation"
+    ]
+  },
+  "ecosystem_links": {
+    "tiation-github": true,
+    "tiation-github-pages-theme": false,
+    "dontbeacunt": false,
+    "dnddiceroller-enhanced": false,
+    "tiation-ai-agents": false,
+    "tiation-rigger-connect-api": false,
+    "tiation-automation-workspace": true,
+    "tiation-java-sdk": false,
+    "tiation-cms": false,
+    "home": false,
+    "mac-zsh-completions": false,
+    "tiation-go-sdk": false,
+    "tiation-alma-street-project": false,
+    "windows-dev-setup": false,
+    "tiation-rigger-shared-libraries": false,
+    "AutomationServer": false,
+    "tiation-python-sdk": false,
+    "DiceRollerSimulator": false,
+    "tiation-headless-cms": false,
+    "dotfiles": false,
+    "dice-roller-marketing-site": false,
+    "tiation-server-configs-gae": false,
+    "tiation-docs": false,
+    "tiation-private-ai-chat": false,
+    "temp-github-pages": false,
+    "perth-white-glove-magic": false,
+    "ubuntu-dev-setup": false,
+    "git-workspace": false,
+    "tiation-terminal-workflows": true,
+    "config": false,
+    "spring-up-markers-web": false,
+    "tiation-vpn-mesh-network": false,
+    "architecture-diagrams": false,
+    "mark-photo-flare-site": true,
+    "tiation-rigger-workspace": false,
+    "RiggerConnectMobileApp": true,
+    "ProtectChildrenAustralia": false,
+    "Law": false,
+    "tiation-rigger-automation-server": false,
+    "mupan-leopard-wellness-hub": false,
+    "tiation-react-template": true,
+    "tiation-docker-debian": true,
+    "tiation": false,
+    "grieftodesign": false,
+    "tiation-invoice-generator": false,
+    "home-safety-matrix-ai": false,
+    "tiation-knowledge-hub": false,
+    "tiation-template-repo": false,
+    "my-new-project": false,
+    "tiation-active-directory-setup": false,
+    "tiation.github.io": false,
+    "tiation-rigger-metrics-dashboard": false,
+    "tiation-economic-reform-proposal": false,
+    "tiation-company-intranet-template": false,
+    "tiation-legal-case-studies": false,
+    "tiation-afl-fantasy-manager-docs": false,
+    "tiation-infrastructure-charms": false,
+    "tiation-fantasy-premier-league": false,
+    "work-docs": false,
+    "tiation-knowledge-base-ai": false,
+    "tiation-rigger-jobs-app": false,
+    "tiation-wellness-hub": false,
+    "dnd_dice_roller": false,
+    "tiation-rigger-connect-app": false,
+    "tiation-ai-platform": false,
+    "TiaAstor": false,
+    "dnddiceroller-android": false,
+    "DnDDiceRoller": true,
+    "scripts": false,
+    "tough-talk-podcast-chaos": false,
+    "tiation-ai-code-assistant": false,
+    "tiation-ansible-enterprise": false,
+    "dockerdeb": true,
+    "tiation-secure-vpn": false,
+    "shattered-realms-nexus": true,
+    "git@github.com!tiation!shattered-realms-nexus.git": false,
+    "tiation-chase-white-rabbit-ngo": false,
+    "website": true,
+    "headscale-admin": false,
+    "tiation-rigger-mobile-app": false,
+    "tiation-rigger-infrastructure": false,
+    "MetricsDashboard": false,
+    "tiation-claude-desktop-linux": false,
+    "tiation-parrot-security-guide-au": false,
+    "tiation-m4-project": false,
+    "MinutesRecorder": false,
+    "Infrastructure": false,
+    "tiation-js-sdk": false,
+    "tiation-macos-networking-guide": false,
+    "tiation-rigger-workspace-docs": true,
+    "tiation-laptop-utilities": false,
+    "Parrot-Security-Guide": false,
+    "liberation-system": false
+  },
+  "issues": [
+    "dnddiceroller-enhanced: Missing ecosystem_banner",
+    "dnddiceroller-enhanced: Missing ecosystem_footer",
+    "dnddiceroller-enhanced: Missing dark_theme_colors",
+    "tiation-ai-agents: Missing dark_theme_colors",
+    "tiation-cms: Missing dark_theme_colors",
+    "tiation-terminal-workflows: Missing dark_theme_colors",
+    "tiation-rigger-workspace: Missing ecosystem_banner",
+    "tiation-rigger-workspace: Missing ecosystem_footer",
+    "tiation-rigger-workspace: Missing dark_theme_colors",
+    "Law: Missing ecosystem_banner",
+    "Law: Missing ecosystem_footer",
+    "Law: Missing dark_theme_colors",
+    "tiation-docker-debian: Missing dark_theme_colors",
+    "tiation-template-repo: Missing ecosystem_banner",
+    "tiation-template-repo: Missing ecosystem_footer",
+    "tiation-template-repo: Missing dark_theme_colors",
+    "my-new-project: Missing ecosystem_banner",
+    "my-new-project: Missing ecosystem_footer",
+    "my-new-project: Missing dark_theme_colors"
+  ]
+}

@@ -1,348 +1,175 @@
-# 🔮 Tiation GitHub Repository Collection
+# 🌌 Tiation GitHub Enterprise Workspace
 
 <div align="center">
 
-![Tiation Ecosystem](https://img.shields.io/badge/🔮_TIATION_ECOSYSTEM-Enterprise_GitHub_Hub-00FFFF?style=for-the-badge&labelColor=0A0A0A&color=00FFFF)
+![Tiation Logo](assets/branding/tiation-logo.svg)
 
-**Enterprise-grade GitHub repository collection for the Tiation ecosystem**
+**Enterprise-grade GitHub workspace with dark neon aesthetics and mobile-first design**
 
-*Professional • Scalable • Mission-Driven*
-
-[![🌐_GitHub_Pages](https://img.shields.io/badge/🌐_GitHub_Pages-Live_Site-00FFFF?style=flat-square&labelColor=0A0A0A)](https://tiation.github.io/tiation-github)
-[![📚_Documentation](https://img.shields.io/badge/📚_Documentation-Complete-007FFF?style=flat-square&labelColor=0A0A0A)](https://github.com/tiation/tiation-github/wiki)
-[![⚡_Status](https://img.shields.io/badge/⚡_Status-Active_Development-FF00FF?style=flat-square&labelColor=0A0A0A)](https://github.com/tiation/tiation-github)
-[![📄_License](https://img.shields.io/badge/📄_License-MIT-00FFFF?style=flat-square&labelColor=0A0A0A)](LICENSE)
-
-</div>
-
----
-
-<div align="center">
-
-[![Enterprise Grade](https://img.shields.io/badge/Enterprise-Grade-00D9FF?style=for-the-badge&logo=shield&logoColor=white)](https://github.com/tiation/tiation-github)
-[![Dark Neon Theme](https://img.shields.io/badge/Theme-Dark%20Neon-FF0080?style=for-the-badge&logo=palette&logoColor=white)](https://github.com/tiation/tiation-github)
-[![Automation](https://img.shields.io/badge/Automation-Enabled-00FF88?style=for-the-badge&logo=github-actions&logoColor=white)](https://github.com/tiation/tiation-github)
-[![Repositories](https://img.shields.io/badge/Repositories-80+-00FFFF?style=for-the-badge&logo=github&logoColor=white)](https://github.com/tiation)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Active-00d4aa?style=for-the-badge&logo=github)](https://github.com/tiaastor)
+[![Mobile Optimized](https://img.shields.io/badge/Mobile-Optimized-ff6b9d?style=for-the-badge)](/)
+[![Dark Theme](https://img.shields.io/badge/Theme-Dark%20Neon-00d4aa?style=for-the-badge)](/)
+[![Consolidated](https://img.shields.io/badge/Structure-Consolidated-ff6b9d?style=for-the-badge)](/)
+[![Knowledge Platform](https://img.shields.io/badge/Knowledge-Platform-00d4aa?style=for-the-badge)](/)
 
 </div>
-
----
-
-<div align="center">
-  <img src="architecture-diagrams/output/tiation-ecosystem-overview.svg" alt="Tiation Ecosystem Overview" width="90%">
-</div>
-
-## 🤖 FOR AI AGENTS - CRITICAL INFORMATION
-
-**⚠️ ALL AGENTS MUST READ THIS FIRST:**
-
-📖 **[TIATION_AGENT_DEPLOYMENT_GUIDE.md](./TIATION_AGENT_DEPLOYMENT_GUIDE.md)** - Complete deployment automation guide
-
-🔧 **Quick Reference:**
-- **12 repositories** fully configured with enterprise deployment
-- **Automated CI/CD workflows** across all projects
-- **Dark neon theme** consistency enforced
-- **Security headers & performance** optimization applied
-
-```bash
-# Essential commands for agents:
-npm run deploy:surge          # Deploy to production
-npm run health-check          # Verify deployment
-./scripts/deploy-all-repos.sh # Configure all repositories
-```
-
----
 
 ## 🚀 Overview
 
-**Tiation GitHub Repository Collection** serves as the central orchestration hub for the Tiation enterprise ecosystem, managing 80+ interconnected repositories with enterprise-grade infrastructure, AI-powered automation, and comprehensive documentation. This collection represents a complete enterprise software ecosystem with dark neon theming, automated workflows, and professional deployment standards.
+This workspace contains enterprise-grade tools, templates, and automation scripts for managing GitHub repositories with a focus on:
 
-<div align="center">
-  <img src="architecture-diagrams/output/infrastructure-overview.png" alt="Infrastructure Overview" width="80%">
-</div>
+- 🌙 **Dark neon theme** with cyan/magenta gradients
+- 📱 **Mobile-first optimization**
+- 🏢 **Enterprise-grade documentation**
+- ⚡ **Automated workflows**
+- 💰 **SaaS monetization features**
+- 🔄 **Consolidated architecture** for maximum efficiency
+- 🧠 **Integrated knowledge platform** for information management
 
-### 📊 Ecosystem Statistics
+## 📁 Consolidated Directory Structure
 
-<table>
-  <tr>
-    <td align="center">
-      <strong>80+</strong><br>
-      <sub>Repositories</sub>
-    </td>
-    <td align="center">
-      <strong>15+</strong><br>
-      <sub>Programming Languages</sub>
-    </td>
-    <td align="center">
-      <strong>12+</strong><br>
-      <sub>Framework Integrations</sub>
-    </td>
-    <td align="center">
-      <strong>99.9%</strong><br>
-      <sub>Uptime SLA</sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <strong>Enterprise</strong><br>
-      <sub>Grade Security</sub>
-    </td>
-    <td align="center">
-      <strong>24/7</strong><br>
-      <sub>Monitoring</sub>
-    </td>
-    <td align="center">
-      <strong>CI/CD</strong><br>
-      <sub>Automated</sub>
-    </td>
-    <td align="center">
-      <strong>MIT</strong><br>
-      <sub>Licensed</sub>
-    </td>
-  </tr>
-</table>
-
-### 🎯 Key Features
-
-<table>
-  <tr>
-    <td width="50%">
-      <h4>🎨 Dark Neon Theme System</h4>
-      <img src=".screenshots/dark-neon-theme-showcase.svg" alt="Dark Neon Theme" width="100%">
-      <p>Professional dark theme with cyan/magenta gradient accents across all repositories</p>
-    </td>
-    <td width="50%">
-      <h4>🏗️ Enterprise Architecture</h4>
-      <img src=".screenshots/enterprise-architecture.svg" alt="Enterprise Architecture" width="100%">
-      <p>Scalable, secure, and compliant enterprise-grade infrastructure</p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <h4>🤖 AI-Powered Automation</h4>
-      <img src=".screenshots/ai-automation.svg" alt="AI Automation" width="100%">
-      <p>Intelligent automation across development, deployment, and maintenance</p>
-    </td>
-    <td width="50%">
-      <h4>📚 Comprehensive Documentation</h4>
-      <img src=".screenshots/documentation-system.svg" alt="Documentation System" width="100%">
-      <p>Complete documentation with user guides, API references, and architecture diagrams</p>
-    </td>
-  </tr>
-</table>
-
----
-
-## 🏗️ Architecture Overview
-
-### System Architecture
-
-<div align="center">
-  <img src="architecture-diagrams/output/tiation-rigger-workspace-architecture.png" alt="System Architecture" width="90%">
-</div>
-
-### Technology Stack
-
-<div align="center">
-  <img src=".screenshots/tech-stack-overview.svg" alt="Technology Stack" width="80%">
-</div>
-
-#### Frontend Technologies
-- **React/Next.js** - Modern web applications
-- **TypeScript** - Type-safe development
-- **Tailwind CSS** - Utility-first styling
-- **SwiftUI** - Native iOS applications
-
-#### Backend Technologies
-- **Node.js/Express** - Web servers and APIs
-- **Python/FastAPI** - AI/ML services
-- **Go** - High-performance microservices
-- **PostgreSQL** - Primary database
-
-#### Infrastructure
-- **Docker/Kubernetes** - Container orchestration
-- **GitHub Actions** - CI/CD automation
-- **AWS/CloudFlare** - Cloud services
-- **Prometheus/Grafana** - Monitoring
-
----
-
-## 🎨 Live Demo
-
-<div align="center">
-  <a href="https://tiation.github.io/tiation-github" target="_blank">
-    <img src=".screenshots/live-demo-preview.svg" alt="Live Demo Preview" width="80%">
-  </a>
-  <br>
-  <a href="https://tiation.github.io/tiation-github" target="_blank">
-    <img src="https://img.shields.io/badge/🔗%20View%20Live%20Demo-00D9FF?style=for-the-badge&logo=github&logoColor=white" alt="View Live Demo">
-  </a>
-</div>
-
----
-
-## 📁 Repository Structure
-
-### 🏗️ Infrastructure & DevOps
-- **tiation-docker-debian** - Enterprise Docker containers for Debian-based systems
-- **tiation-ansible-enterprise** - Ansible playbooks for enterprise infrastructure
-- **tiation-terminal-workflows** - Custom terminal automation workflows
-- **tiation-infrastructure-charms** - Juju charms for infrastructure management
-
-### 🤖 AI & Machine Learning
-- **tiation-ai-platform** - Comprehensive AI platform with enterprise features
-- **tiation-ai-agents** - AI agent frameworks and implementations
-- **tiation-ai-code-assistant** - AI-powered code assistance tools
-- **tiation-knowledge-base-ai** - AI-driven knowledge management system
-
-### 🌐 Web Development & CMS
-- **tiation-cms** - Enterprise content management system
-- **tiation-github-pages-theme** - Custom GitHub Pages themes with dark neon styling
-- **tiation-headless-cms** - Modern headless CMS solution
-- **tiation-company-intranet-template** - Enterprise intranet templates
-
-### 📱 Mobile & Gaming
-- **dnd_dice_roller** - D&D Dice Rolling application
-- **tiation-rigger-mobile-app** - Mobile application for rigger workforce
-- **DiceRollerSimulator** - Advanced dice rolling simulator
-
-### 🔧 SDKs & Libraries
-- **tiation-go-sdk** - Go SDK for Tiation services
-- **tiation-python-sdk** - Python SDK for Tiation services
-- **tiation-js-sdk** - JavaScript SDK for Tiation services
-- **tiation-java-sdk** - Java SDK for Tiation services
-
-### 🔐 Security & Networking
-- **tiation-secure-vpn** - Enterprise VPN solution
-- **tiation-vpn-mesh-network** - Mesh network VPN implementation
-- **tiation-parrot-security-guide-au** - Security guide for Australian context
-
-### 📊 Business & Analytics
-- **tiation-rigger-workspace** - Comprehensive rigger workforce management
-- **tiation-automation-workspace** - Business process automation tools
-- **tiation-invoice-generator** - Enterprise invoicing system
-
-## 🎨 Design System
-
-All projects implement a consistent **dark neon theme** with:
-- Cyan/magenta gradient accents
-- Enterprise-grade UI components
-- Consistent branding across platforms
-- Professional documentation standards
-
-## 🔧 Quick Start
-
-```bash
-# Clone the repository
-git clone https://github.com/tiation/tiation-github.git
-cd tiation-github
-
-# Initialize submodules (if applicable)
-git submodule update --init --recursive
-
-# Run initial setup
-./setup-remotes.sh
+```
+tiation-github/
+├── 📁 infrastructure/         # ALL infrastructure & automation
+│   ├── 📁 automation-server/ # Enterprise automation services
+│   ├── 📁 monitoring/        # Metrics & dashboards
+│   ├── 📁 knowledge-platform/# Integrated knowledge management
+│   ├── 📁 core/              # Core infrastructure configs
+│   ├── 📁 network/           # Network tools & configs
+│   ├── 📁 deployment/        # Deployment configurations
+│   ├── 📁 docker/            # Docker configurations
+│   └── 📁 monitoring/        # Monitoring tools
+├── 📁 templates/             # ALL reusable templates
+│   ├── 📁 branding/         # Brand templates & assets
+│   ├── 📁 repositories/     # Repository templates
+│   ├── 📁 config/           # Configuration templates
+│   ├── 📁 documentation/    # Documentation templates
+│   ├── 📁 web/              # Web templates
+│   └── 📁 workflows/        # GitHub Actions workflows
+├── 📁 documentation/        # ALL project documentation
+│   ├── 📁 central-hub/      # Main documentation hub
+│   ├── 📁 knowledge-hub/    # Knowledge platform docs
+│   ├── 📁 architecture/     # Architecture diagrams & docs
+│   ├── 📁 guides/           # Step-by-step guides
+│   ├── 📁 reports/          # Status and analysis reports
+│   └── 📁 api/              # API documentation
+├── 📁 assets/               # ALL static assets
+│   ├── 📁 diagrams/         # Generated architecture diagrams
+│   ├── 📁 branding/         # Brand assets & logos
+│   ├── 📁 images/           # Screenshots and images
+│   └── 📁 svg/              # SVG files and diagrams
+├── 📁 tools/                # ALL development tools
+│   ├── 📁 git/              # Git workspace management
+│   ├── 📁 development/      # Development utilities
+│   ├── 📁 network/          # Network utilities
+│   ├── 📁 configuration/    # Configuration management
+│   └── 📁 utilities/        # General utilities
+├── 📁 automation/           # ALL automation scripts
+│   ├── 📁 python/          # Python automation scripts
+│   ├── 📁 shell/           # Shell scripts (consolidated)
+│   └── 📁 workflows/       # GitHub Actions workflows
+├── 📁 archive/             # Archived/deprecated files
+└── 📁 [tiation-projects]  # Individual tiation projects
 ```
 
-## 🛠️ Development Environment
+## 🛠️ Quick Start
 
-### Prerequisites
-- macOS/Linux development environment
-- Docker and Docker Compose
-- Node.js 18+
-- Python 3.9+
-- Go 1.19+
-
-### Theme Configuration
-The repository includes standardized theme files:
-- `tiation-dark-neon-theme-system.js` - JavaScript theme system
-- `tiation-github-pages-theme.css` - CSS theme framework
-- `tiation-terminal-theme.json` - Terminal theme configuration
-
-## 📚 Documentation
-
-### Architecture Documentation
-- [Infrastructure Documentation](./INFRASTRUCTURE_DOCUMENTATION.md)
-- [Repository Index](./REPOSITORY_INDEX.md)
-- [Repository Graph](./REPOSITORY_GRAPH.md)
-- [MVP Strategy Plan](./MVP_STRATEGY_PLAN.md)
-
-### Automation Scripts
-- `sync_all_repos.sh` - Synchronize all repositories
-- `mass-upgrade-repositories.sh` - Mass upgrade automation
-- `apply_dark_neon_theme.sh` - Apply consistent theming
-- `check_git_sync.sh` - Git synchronization verification
-
-## 🚀 Deployment
-
-### Production Deployment
+### Infrastructure Management
 ```bash
+# Access automation services
+cd infrastructure/automation-server
+
+# View monitoring dashboards
+cd infrastructure/monitoring/metrics
+
+# Use knowledge platform
+cd infrastructure/knowledge-platform/tiation-knowledge-hub
+
 # Deploy infrastructure
-cd tiation-docker-debian
-docker-compose up -d
-
-# Configure networking
-cd ../tiation-secure-vpn
-./deploy-production.sh
+cd infrastructure/deployment
 ```
 
-### Development Environment
+### Template Usage
 ```bash
-# Start development services
-docker-compose -f docker-compose.yml up -d
+# Use branding templates
+cd templates/branding
 
-# Configure development environment
-./setup-dev-environment.sh
+# Create new repository from template
+cd templates/repositories
+
+# Apply configuration templates
+cd templates/config
 ```
 
-## 🔄 Continuous Integration
+### Documentation Access
+```bash
+# Access main documentation hub
+cd documentation/central-hub
 
-GitHub Actions workflows are configured for:
-- Automated testing across all repositories
-- Dark neon theme consistency validation
-- Security scanning and compliance checks
-- Automated documentation generation
+# View knowledge platform docs
+cd documentation/knowledge-hub
+
+# View architecture diagrams
+cd documentation/architecture
+
+# Follow step-by-step guides
+cd documentation/guides
+```
+
+### Tools & Development
+```bash
+# Git workspace management
+cd tools/git
+
+# Development utilities
+cd tools/development
+
+# Network configuration
+cd tools/network
+```
+
+### Automation & Scripts
+```bash
+# Python automation
+cd automation/python
+
+# Shell scripts (consolidated)
+cd automation/shell
+
+# GitHub Actions workflows
+cd automation/workflows
+```
+
+## 🎨 Theme & Design
+
+All projects follow a consistent **dark neon theme** with:
+- Primary: Cyan (#00d4aa)
+- Secondary: Magenta (#ff6b9d)
+- Background: Dark (#0a0a0a)
+- Mobile-first responsive design
+
+## 🔗 Key Features
+
+- ✅ **Consolidated architecture** for maximum efficiency
+- ✅ **Knowledge management platform** integrated
+- ✅ **Enterprise-grade repository structure**
+- ✅ **Mobile-optimized GitHub Pages**
+- ✅ **SaaS monetization with Stripe/Supabase**
+- ✅ **Automated documentation generation**
+- ✅ **Interactive demos and architecture diagrams**
+- ✅ **CI/CD workflows**
+- ✅ **Dark neon theme** consistency
+
+## 📊 Project Status
+
+Visit the [documentation/reports/](documentation/reports/) directory for detailed status reports and metrics.
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch with dark neon theme compliance
-3. Ensure enterprise-grade documentation standards
-4. Submit pull request with comprehensive testing
-
-## 📄 License
-
-This project is licensed under the MIT License - see individual repositories for specific license information.
-
-## 🔗 Links
-
-- [GitHub Organization](https://github.com/tiation)
-- [Documentation Site](https://tiation.github.io/tiation-github)
-- [Enterprise Portal](https://enterprise.tiation.com)
-
-## 📞 Support
-
-For enterprise support and consulting:
-- Email: tiatheone@protonmail.com
-- Documentation: [Enterprise Support Portal](https://support.tiation.com)
-- Issues: [GitHub Issues](https://github.com/tiation/tiation-github/issues)
+This workspace follows enterprise standards with comprehensive documentation, mobile optimization, and dark neon theming.
 
 ---
 
-**Built with ❤️ and enterprise-grade standards**
-
----
-
-## 🔮 Tiation Ecosystem
-
-This repository is part of the Tiation ecosystem. Explore related projects:
-
-- [🌟 TiaAstor](https://github.com/TiaAstor/TiaAstor) - Personal brand and story
-- [🐰 ChaseWhiteRabbit NGO](https://github.com/tiation/tiation-chase-white-rabbit-ngo) - Social impact initiatives
-- [🏗️ Infrastructure](https://github.com/tiation/tiation-rigger-infrastructure) - Enterprise infrastructure
-- [🤖 AI Agents](https://github.com/tiation/tiation-ai-agents) - Intelligent automation
-- [📝 CMS](https://github.com/tiation/tiation-cms) - Content management system
-- [⚡ Terminal Workflows](https://github.com/tiation/tiation-terminal-workflows) - Developer tools
-
----
-*Built with 💜 by the Tiation team*
+<div align="center">
+<strong>Built with 💜 for enterprise-grade GitHub workflows</strong>
+</div>
