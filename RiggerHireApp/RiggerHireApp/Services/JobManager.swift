@@ -388,7 +388,7 @@ class JobManager: ObservableObject {
 
 // MARK: - Supporting Models
 
-struct JobFilters {
+struct JobFilters: Codable {
     var jobTypes: [JobType] = []
     var experienceLevels: [ExperienceLevel] = []
     var siteTypes: [Location.SiteType] = []

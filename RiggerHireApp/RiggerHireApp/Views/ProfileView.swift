@@ -147,7 +147,7 @@ struct ProfileView: View {
                 subtitle: "Sign out of your account",
                 isDestructive: true,
                 action: {
-                    authManager.signOut()
+                    authManager.logout()
                 }
             )
         }

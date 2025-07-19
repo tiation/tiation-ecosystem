@@ -191,7 +191,7 @@ struct MyJobsView: View {
         }
     }
     
-    private func handleJobAction(job: Job, action: JobAction) {
+    private func handleJobAction(job: Job, action: MyJobCard.JobAction) {
         Task {
             switch action {
             case .start:
