@@ -65,10 +65,14 @@ tiation-github/
 │   ├── 📁 shell/              # Shell automation scripts
 │   └── 📁 workflows/          # GitHub Actions workflows
 └── 📁 [tiation-projects]/      # Individual tiation project repositories
-    ├── 📁 rigger-ecosystem/    # Rigger platform projects
     ├── 📁 ai-services/         # AI platform components
     ├── 📁 www-*               # Website projects
     └── 📁 [specialized-apps]  # Other specialized applications
+
+Note: Rigger platform projects are now located in dedicated repositories:
+- RiggerConnect-web, RiggerConnect-android, RiggerConnect-ios
+- RiggerHub-web, RiggerHub-android, RiggerHub-ios  
+- RiggerShared, RiggerBackend
 ```
 
 ## 🛠️ Quick Start
