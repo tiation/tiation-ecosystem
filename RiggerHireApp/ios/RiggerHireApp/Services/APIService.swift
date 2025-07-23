@@ -235,7 +235,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         
         let update = JobLocationUpdate(
             jobId: jobId,
-            location: location.coordinate,
+            location: JobLocationUpdate.Location(coordinate: location.coordinate),
             timestamp: Date(),
             accuracy: location.horizontalAccuracy
         )
@@ -288,7 +288,7 @@ struct JobLocationUpdate: Codable {
     }
     
     let jobId: UUID
-let location: Location
+    let location: Location
     let timestamp: Date
     let accuracy: Double
 }

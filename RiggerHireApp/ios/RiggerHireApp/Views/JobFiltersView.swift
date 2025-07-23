@@ -1,5 +1,4 @@
 import SwiftUI
-import CustomTextField
 
 struct JobFiltersView: View {
     @Environment(\.dismiss) var dismiss
@@ -25,11 +24,18 @@ struct JobFiltersView: View {
                     VStack(spacing: 24) {
                         // Location filter
                         FilterSection(title: "Location") {
-                            CustomTextField(
-                                title: "City or State",
-                                text: $workingFilters.location,
-                                icon: "location"
-                            )
+                            VStack(alignment: .leading, spacing: 8) {
+                                HStack {
+                                    Image(systemName: "location")
+                                        .foregroundColor(themeManager.accentColor)
+                                    Text("City or State")
+                                        .font(.caption)
+                                        .foregroundColor(themeManager.secondaryTextColor)
+                                }
+                                
+                                TextField("Enter location", text: $workingFilters.location)
+                                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                            }
                         }
                         
                         // Job Type filter
