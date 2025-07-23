@@ -1,5 +1,7 @@
 import SwiftUI
+import SwiftUI
 
+// Theme Extensions Placeholder
 // ViewModifier for card style
 struct CardModifier: ViewModifier {
     let themeManager: ThemeManager

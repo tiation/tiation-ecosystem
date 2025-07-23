@@ -1,5 +1,15 @@
 import SwiftUI
+import SwiftUI
 
+// Placeholder View for missing components
+struct PlaceholderView: View {
+    var body: some View {
+        Text("Placeholder View")
+            .font(.largeTitle)
+            .foregroundColor(.gray)
+            .padding()
+    }
+}
 // MARK: - My Applications View
 struct MyApplicationsView: View {
     @EnvironmentObject var themeManager: ThemeManager

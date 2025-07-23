@@ -394,6 +394,71 @@ class AuthenticationManager: ObservableObject {
             isVerified: true
         )
     }
+    
+    // Additional properties and methods needed by the app
+    var isFirstTimeUser: Bool {
+        // Check if user has completed onboarding
+        return UserDefaults.standard.bool(forKey: "hasCompletedOnboarding") == false
+    }
+    
+    var currentWorker: User? {
+        return currentUser
+    }
+    
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailRegex)
+        return emailPredicate.evaluate(with: email)
+    }
+    
+    func isValidPassword(_ password: String) -> Bool {
+        return password.count >= 6
+    }
+    
+    enum PasswordStrength {
+        case weak, fair, good, strong
+        
+        var text: String {
+            switch self {
+            case .weak: return "Weak"
+            case .fair: return "Fair"
+            case .good: return "Good"
+            case .strong: return "Strong"
+            }
+        }
+    }
+    
+    func passwordStrength(_ password: String) -> PasswordStrength {
+        let length = password.count
+        let hasUppercase = password.range(of: "[A-Z]", options: .regularExpression) != nil
+        let hasLowercase = password.range(of: "[a-z]", options: .regularExpression) != nil
+        let hasNumbers = password.range(of: "[0-9]", options: .regularExpression) != nil
+        let hasSpecialCharacters = password.range(of: "[^A-Za-z0-9]", options: .regularExpression) != nil
+        
+        var score = 0
+        if length >= 8 { score += 1 }
+        if hasUppercase { score += 1 }
+        if hasLowercase { score += 1 }
+        if hasNumbers { score += 1 }
+        if hasSpecialCharacters { score += 1 }
+        
+        switch score {
+        case 0...1: return .weak
+        case 2...3: return .fair
+        case 4: return .good
+        case 5: return .strong
+        default: return .weak
+        }
+    }
+    
+    func resetPassword(email: String) {
+        Task {
+            let success = await forgotPassword(email: email)
+            if !success {
+                errorMessage = "Failed to send reset email. Please try again."
+            }
+        }
+    }
 }
 
 // MARK: - Request/Response Models

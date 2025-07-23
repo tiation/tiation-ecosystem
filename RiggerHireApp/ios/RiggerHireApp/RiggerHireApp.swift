@@ -22,6 +22,9 @@ class ThemeManager: ObservableObject {
     @Published var warningColor = Color(red: 1.0, green: 0.8, blue: 0.0)
     @Published var errorColor = Color(red: 1.0, green: 0.3, blue: 0.3)
     
+    // Shadow color
+    @Published var shadowColor = Color.black.opacity(0.2)
+    
     // Gradient definitions
     var primaryGradient: LinearGradient {
         LinearGradient(

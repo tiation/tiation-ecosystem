@@ -1,5 +1,15 @@
 import SwiftUI
+import SwiftUI
 
+// View Extensions Placeholder
+extension View {
+    func placeholderStyle() -> some View {
+        self
+            .background(Color.gray.opacity(0.5))
+            .cornerRadius(10)
+            .padding()
+    }
+}
 extension View {
     func cardStyle(_ themeManager: ThemeManager) -> some View {
         modifier(CardStyleModifier(themeManager: themeManager))
