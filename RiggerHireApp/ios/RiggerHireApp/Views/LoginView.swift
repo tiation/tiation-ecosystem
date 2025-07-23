@@ -72,7 +72,9 @@ struct LoginView: View {
         }
         .sheet(isPresented: $showingSignUp) {
             NavigationStack {
-                RegisterView()
+                Text("Register View Coming Soon")
+                    .foregroundColor(.white)
+                    .padding()
             }
         }
         .sheet(isPresented: $showingForgotPassword) {

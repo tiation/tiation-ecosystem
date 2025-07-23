@@ -7,12 +7,11 @@ struct JobFiltersView: View {
     @Binding var filters: JobFilters
     let onApply: (JobFilters) -> Void
     
-    @State private var workingFilters: JobFilters
+    @StateObject private var workingFilters = JobFilters()
     
     init(filters: Binding<JobFilters>, onApply: @escaping (JobFilters) -> Void) {
         self._filters = filters
         self.onApply = onApply
-        self._workingFilters = State(initialValue: filters.wrappedValue)
     }
     
     var body: some View {
@@ -110,7 +109,10 @@ struct JobFiltersView: View {
                                             .font(.caption)
                                             .foregroundColor(themeManager.secondaryTextColor)
                                         
-                                        TextField("0", value: $workingFilters.salaryMin, format: .number)
+                                        TextField("0", value: Binding(
+                                            get: { workingFilters.salaryMin ?? 0 },
+                                            set: { workingFilters.salaryMin = $0 > 0 ? $0 : nil }
+                                        ), format: .number)
                                             .keyboardType(.decimalPad)
                                             .textFieldStyle(RoundedBorderTextFieldStyle())
                                     }
@@ -120,7 +122,10 @@ struct JobFiltersView: View {
                                             .font(.caption)
                                             .foregroundColor(themeManager.secondaryTextColor)
                                         
-                                        TextField("1000", value: $workingFilters.salaryMax, format: .number)
+                                        TextField("1000", value: Binding(
+                                            get: { workingFilters.salaryMax ?? 1000 },
+                                            set: { workingFilters.salaryMax = $0 > 0 ? $0 : nil }
+                                        ), format: .number)
                                             .keyboardType(.decimalPad)
                                             .textFieldStyle(RoundedBorderTextFieldStyle())
                                     }
@@ -163,7 +168,7 @@ struct JobFiltersView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Clear All") {
-                        workingFilters = JobFilters()
+                        workingFilters.reset()
                     }
                     .foregroundColor(themeManager.errorColor)
                 }
@@ -178,6 +183,10 @@ struct JobFiltersView: View {
                     .fontWeight(.semibold)
                 }
             }
+        }
+        .onAppear {
+            // Initialize working filters with current filter values
+            workingFilters.copyFrom(filters)
         }
     }
 }

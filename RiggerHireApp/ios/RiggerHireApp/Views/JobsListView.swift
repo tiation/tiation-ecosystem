@@ -77,7 +77,14 @@ struct JobsListView: View {
                 jobManager.refreshJobs()
             }
             .sheet(isPresented: $showingFilters) {
-                JobFiltersView()
+                JobFiltersView(
+                    filters: Binding(
+                        get: { jobManager.jobFilters },
+                        set: { jobManager.jobFilters = $0 }
+                    )
+                ) { updatedFilters in
+                    jobManager.applyFilters(updatedFilters)
+                }
             }
             .sheet(item: $selectedJob) { job in
                 JobDetailView(job: job)

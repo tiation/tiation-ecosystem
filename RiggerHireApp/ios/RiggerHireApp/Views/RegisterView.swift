@@ -73,27 +73,27 @@ struct RegisterView: View {
                             VStack(spacing: 16) {
                                 HStack(spacing: 12) {
                                     CustomTextField(
-                                        placeholder: "First Name",
+                                        title: "First Name",
                                         text: $firstName,
                                         icon: "person.fill"
                                     )
                                     
                                     CustomTextField(
-                                        placeholder: "Last Name",
+                                        title: "Last Name",
                                         text: $lastName,
                                         icon: "person.fill"
                                     )
                                 }
                                 
                                 CustomTextField(
-                                    placeholder: "Email Address",
+                                    title: "Email Address",
                                     text: $email,
                                     icon: "envelope.fill",
                                     keyboardType: .emailAddress
                                 )
                                 
                                 CustomTextField(
-                                    placeholder: "Phone Number",
+                                    title: "Phone Number",
                                     text: $phone,
                                     icon: "phone.fill",
                                     keyboardType: .phonePad
@@ -103,14 +103,14 @@ struct RegisterView: View {
                             // Password Section
                             VStack(spacing: 16) {
                                 CustomTextField(
-                                    placeholder: "Password",
+                                    title: "Password",
                                     text: $password,
                                     icon: "lock.fill",
                                     isSecure: true
                                 )
                                 
                                 CustomTextField(
-                                    placeholder: "Confirm Password",
+                                    title: "Confirm Password",
                                     text: $confirmPassword,
                                     icon: "lock.fill",
                                     isSecure: true
@@ -282,45 +282,6 @@ struct RegisterView: View {
     }
 }
 
-struct CustomTextField: View {
-    let placeholder: String
-    @Binding var text: String
-    let icon: String
-    var isSecure: Bool = false
-    var keyboardType: UIKeyboardType = .default
-    
-    var body: some View {
-        HStack(spacing: 12) {
-            Image(systemName: icon)
-                .font(.system(size: 16, weight: .medium))
-                .foregroundColor(.cyan)
-                .frame(width: 20)
-            
-            if isSecure {
-                SecureField(placeholder, text: $text)
-                    .font(.system(size: 16))
-                    .foregroundColor(.white)
-            } else {
-                TextField(placeholder, text: $text)
-                    .font(.system(size: 16))
-                    .foregroundColor(.white)
-                    .keyboardType(keyboardType)
-                    .autocapitalization(.none)
-                    .disableAutocorrection(true)
-            }
-        }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 16)
-        .background(
-            RoundedRectangle(cornerRadius: 12)
-                .fill(Color.black.opacity(0.3))
-                .overlay(
-                    RoundedRectangle(cornerRadius: 12)
-                        .stroke(Color.cyan.opacity(0.3), lineWidth: 1)
-                )
-        )
-    }
-}
 
 struct PasswordStrengthView: View {
     let password: String

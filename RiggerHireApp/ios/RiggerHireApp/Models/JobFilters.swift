@@ -1,4 +1,5 @@
 import Foundation
+import Combine
 
 class JobFilters: ObservableObject {
 @Published var location: String = ""
@@ -47,7 +48,7 @@ class JobFilters: ObservableObject {
     }
     
     // Reset all filters to default values
-    mutating func reset() {
+    func reset() {
         location = ""
         jobType = nil
         industry = nil
@@ -56,6 +57,18 @@ class JobFilters: ObservableObject {
         salaryMax = nil
         isRemote = nil
         isUrgent = nil
+    }
+    
+    // Copy values from another JobFilters instance
+    func copyFrom(_ other: JobFilters) {
+        location = other.location
+        jobType = other.jobType
+        industry = other.industry
+        experienceLevel = other.experienceLevel
+        salaryMin = other.salaryMin
+        salaryMax = other.salaryMax
+        isRemote = other.isRemote
+        isUrgent = other.isUrgent
     }
     
     // Function to check if a job matches the current filters

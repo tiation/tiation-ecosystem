@@ -21,21 +21,21 @@ struct ContentView: View {
                         }
                         .tag(0)
                     
-                    ApplicationHistoryView()
+                    MyJobsView()
                         .tabItem {
                             Image(systemName: "doc.text")
                             Text("Applications")
                         }
                         .tag(1)
                     
-                    EarningsDashboardView()
+                    PaymentsView()
                         .tabItem {
                             Image(systemName: "dollarsign.circle")
                             Text("Earnings")
                         }
                         .tag(2)
                     
-                    NotificationsView()
+                    Text("Notifications")
                         .tabItem {
                             Image(systemName: "bell")
                             Text("Notifications")
@@ -58,7 +58,7 @@ struct ContentView: View {
                     }
                 }
             } else {
-                AuthenticationView()
+                LoginView()
             }
         }
         .background(
@@ -70,7 +70,9 @@ struct ContentView: View {
             .ignoresSafeArea()
         )
         .fullScreenCover(isPresented: $showOnboarding) {
-            OnboardingView()
+            Text("Welcome to RiggerHire!")
+                .font(.largeTitle)
+                .foregroundColor(themeManager.primaryTextColor)
         }
     }
 }

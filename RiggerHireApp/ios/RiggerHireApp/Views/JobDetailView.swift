@@ -148,7 +148,10 @@ struct JobDetailView: View {
                     .foregroundColor(themeManager.mutedTextColor)
             }
         }
-        .cardStyle(themeManager)
+        .padding()
+        .background(themeManager.surfaceColor)
+        .cornerRadius(12)
+        .shadow(color: themeManager.shadowColor.opacity(0.1), radius: 8, x: 0, y: 4)
     }
     
     private var jobDetailsView: some View {
@@ -184,7 +187,10 @@ struct JobDetailView: View {
                 }
             }
         }
-        .cardStyle(themeManager)
+        .padding()
+        .background(themeManager.surfaceColor)
+        .cornerRadius(12)
+        .shadow(color: themeManager.shadowColor.opacity(0.1), radius: 8, x: 0, y: 4)
     }
     
     private var requirementsView: some View {
@@ -257,7 +263,10 @@ struct JobDetailView: View {
                 }
             }
         }
-        .cardStyle(themeManager)
+        .padding()
+        .background(themeManager.surfaceColor)
+        .cornerRadius(12)
+        .shadow(color: themeManager.shadowColor.opacity(0.1), radius: 8, x: 0, y: 4)
     }
     
     private var responsibilitiesView: some View {
@@ -281,7 +290,10 @@ struct JobDetailView: View {
                 }
             }
         }
-        .cardStyle(themeManager)
+        .padding()
+        .background(themeManager.surfaceColor)
+        .cornerRadius(12)
+        .shadow(color: themeManager.shadowColor.opacity(0.1), radius: 8, x: 0, y: 4)
     }
     
     private var benefitsView: some View {
@@ -303,7 +315,10 @@ struct JobDetailView: View {
                 }
             }
         }
-        .cardStyle(themeManager)
+        .padding()
+        .background(themeManager.surfaceColor)
+        .cornerRadius(12)
+        .shadow(color: themeManager.shadowColor.opacity(0.1), radius: 8, x: 0, y: 4)
     }
     
     private var companyInfoView: some View {
@@ -358,7 +373,10 @@ struct JobDetailView: View {
                 }
             }
         }
-        .cardStyle(themeManager)
+        .padding()
+        .background(themeManager.surfaceColor)
+        .cornerRadius(12)
+        .shadow(color: themeManager.shadowColor.opacity(0.1), radius: 8, x: 0, y: 4)
     }
     
     private var applyButtonView: some View {
@@ -393,7 +411,11 @@ struct JobDetailView: View {
                 Button("Apply Now") {
                     showApplicationForm = true
                 }
-                .neonButtonStyle(themeManager)
+                .padding()
+                .background(themeManager.accentColor)
+                .foregroundColor(.white)
+                .cornerRadius(12)
+                .shadow(color: themeManager.accentColor.opacity(0.5), radius: 8, x: 0, y: 4)
                 .frame(maxWidth: .infinity)
                 .disabled(job.isExpired || job.applicationStatus != .open)
             }

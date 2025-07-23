@@ -27,7 +27,9 @@ struct ProfileView: View {
         .preferredColorScheme(.dark)
         .sheet(isPresented: $showingEditProfile) {
             NavigationStack {
-                EditProfileView()
+                Text("Edit Profile")
+                    .font(.largeTitle)
+                    .foregroundColor(.white)
             }
         }
     }
@@ -102,7 +104,7 @@ struct ProfileView: View {
     
     private var actionsSection: some View {
         VStack(spacing: 12) {
-            NavigationLink(destination: DocumentsView()) {
+            NavigationLink(destination: Text("Documents").foregroundColor(.white)) {
                 ProfileActionRow(
                     icon: "doc.text.fill",
                     title: "Documents",
@@ -110,7 +112,7 @@ struct ProfileView: View {
                 )
             }
             
-            NavigationLink(destination: CertificationsView()) {
+            NavigationLink(destination: Text("Certifications").foregroundColor(.white)) {
                 ProfileActionRow(
                     icon: "award.fill",
                     title: "Certifications",
@@ -118,7 +120,7 @@ struct ProfileView: View {
                 )
             }
             
-            NavigationLink(destination: ReviewsView()) {
+            NavigationLink(destination: Text("Reviews").foregroundColor(.white)) {
                 ProfileActionRow(
                     icon: "star.fill",
                     title: "Reviews",
@@ -126,7 +128,7 @@ struct ProfileView: View {
                 )
             }
             
-            NavigationLink(destination: SkillsManagementView()) {
+            NavigationLink(destination: Text("Skills").foregroundColor(.white)) {
                 ProfileActionRow(
                     icon: "wrench.and.screwdriver.fill",
                     title: "Skills",
@@ -134,7 +136,7 @@ struct ProfileView: View {
                 )
             }
             
-            NavigationLink(destination: ExperienceView()) {
+            NavigationLink(destination: Text("Experience").foregroundColor(.white)) {
                 ProfileActionRow(
                     icon: "briefcase.fill",
                     title: "Experience",
@@ -142,7 +144,7 @@ struct ProfileView: View {
                 )
             }
             
-            NavigationLink(destination: PortfolioView()) {
+            NavigationLink(destination: Text("Portfolio").foregroundColor(.white)) {
                 ProfileActionRow(
                     icon: "photo.on.rectangle.fill",
                     title: "Portfolio",
@@ -150,7 +152,7 @@ struct ProfileView: View {
                 )
             }
             
-            NavigationLink(destination: SupportOverviewView()) {
+            NavigationLink(destination: Text("Help & Support").foregroundColor(.white)) {
                 ProfileActionRow(
                     icon: "questionmark.circle.fill",
                     title: "Help & Support",
